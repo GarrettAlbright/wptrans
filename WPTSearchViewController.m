@@ -8,6 +8,7 @@
 
 #import "WPTSearchViewController.h"
 #import "WPTWPRequest.h"
+#import "WPTLangBase.h"
 
 @interface WPTSearchViewController ()
 
@@ -20,7 +21,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         UINavigationItem *ni = [self navigationItem];
-        [ni setTitle:[langDict objectForKey:@"lang"]];
+        [ni setTitle:[langDict objectForKey:@"loclang"]];
         langPrefix = [langDict objectForKey:@"prefix"];
     }
     return self;
@@ -77,7 +78,7 @@
     }
     NSDictionary *result = [results objectAtIndex:[indexPath row]];
     [[cell detailTextLabel] setText:[result objectForKey:@"translation"]];
-    [[cell textLabel] setText:[result objectForKey:@"langcode"]];
+    [[cell textLabel] setText:[result objectForKey:@"language"]];
     return cell;
 }
 
@@ -169,7 +170,8 @@
 
 - (void)retrieveResults:(NSDictionary *)fullResults
 {
-    results = [fullResults objectForKey:@"languageResults"];
+    NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
+    results = [[fullResults objectForKey:@"languageResults"] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
     NSString *finalTitle = [fullResults objectForKey:@"finalTitle"];
     if (finalTitle) {
         [[[self searchDisplayController] searchBar] setText:finalTitle];

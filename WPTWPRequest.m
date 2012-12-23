@@ -7,6 +7,7 @@
 //
 
 #import "WPTWPRequest.h"
+#import "WPTLangBase.h"
 
 @implementation WPTWPRequest
 
@@ -52,10 +53,13 @@
     NSArray *langlinks = [[[[[jsonResult objectForKey:@"query"] objectForKey:@"pages"] allValues] objectAtIndex:0] objectForKey:@"langlinks"];
     // Create a dictionary to store language results
     NSMutableArray *langResults = [[NSMutableArray alloc] init];
+    WPTLangBase *langBase = [WPTLangBase sharedBase];
     for (NSDictionary *langSet in langlinks) {
-        NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithCapacity:3];
         [result setValue:[langSet objectForKey:@"*"] forKey:@"translation"];
-        [result setValue:[langSet objectForKey:@"lang"] forKey:@"langcode"];
+        NSString *langCode = [langSet objectForKey:@"lang"];
+        [result setValue:langCode forKey:@"langcode"];
+        [result setValue:[langBase languageForCode:langCode] forKey:@"language"];
         [langResults addObject:(NSDictionary *)result];
     }
     [result setObject:langResults forKey:@"languageResults"];

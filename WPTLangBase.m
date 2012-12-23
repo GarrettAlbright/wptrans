@@ -55,7 +55,7 @@
     // @todo Use filteredArrayUsingPredicate? Store dictionary keyed by
     // langcode even though that increases memory? Or just live with this?
     for (NSDictionary *langDict in langsAlphaOrder) {
-        if (langCode == [langDict objectForKey:@"prefix"]) {
+        if ([[langDict objectForKey:@"prefix"] isEqual:langCode]) {
             return [langDict objectForKey:@"loclang"];
         }
     }
