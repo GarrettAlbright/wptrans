@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
+		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
+		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
+		6865447A166A585C0028DE77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68654478166A585C0028DE77 /* InfoPlist.strings */; };
+		6865447C166A585C0028DE77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6865447B166A585C0028DE77 /* main.m */; };
+		68654480166A585C0028DE77 /* WPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6865447F166A585C0028DE77 /* WPTAppDelegate.m */; };
+		68654482166A585C0028DE77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 68654481166A585C0028DE77 /* Default.png */; };
+		68654484166A585C0028DE77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68654483166A585C0028DE77 /* Default@2x.png */; };
+		68654486166A585C0028DE77 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68654485166A585C0028DE77 /* Default-568h@2x.png */; };
+		6865448D166A599F0028DE77 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6865448C166A599F0028DE77 /* TabBar.xib */; };
+		686544A6166B439B0028DE77 /* WPTLangSelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686544A5166B439B0028DE77 /* WPTLangSelViewController.m */; };
+		686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 686544A8166B46BC0028DE77 /* WPTWPRequest.m */; };
+		688C3B221686C22D00D34755 /* wikipedias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688C3B211686C22D00D34755 /* wikipedias.plist */; };
+		68A02C731683084700FDBB9B /* WPTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A02C711683084700FDBB9B /* WPTSearchViewController.m */; };
+		68A02C741683084700FDBB9B /* WPTSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68A02C721683084700FDBB9B /* WPTSearchViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		68654471166A585C0028DE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68654473166A585C0028DE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		68654477166A585C0028DE77 /* WPTrans-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WPTrans-Info.plist"; sourceTree = "<group>"; };
+		68654479166A585C0028DE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6865447B166A585C0028DE77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6865447D166A585C0028DE77 /* WPTrans-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WPTrans-Prefix.pch"; sourceTree = "<group>"; };
+		6865447E166A585C0028DE77 /* WPTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPTAppDelegate.h; sourceTree = "<group>"; };
+		6865447F166A585C0028DE77 /* WPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPTAppDelegate.m; sourceTree = "<group>"; };
+		68654481166A585C0028DE77 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		68654483166A585C0028DE77 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		68654485166A585C0028DE77 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6865448C166A599F0028DE77 /* TabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
+		686544A4166B439B0028DE77 /* WPTLangSelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSelViewController.h; sourceTree = "<group>"; };
+		686544A5166B439B0028DE77 /* WPTLangSelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSelViewController.m; sourceTree = "<group>"; };
+		686544A7166B46BC0028DE77 /* WPTWPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTWPRequest.h; sourceTree = "<group>"; };
+		686544A8166B46BC0028DE77 /* WPTWPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTWPRequest.m; sourceTree = "<group>"; };
+		688C3B211686C22D00D34755 /* wikipedias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wikipedias.plist; sourceTree = "<group>"; };
+		68A02C701683084700FDBB9B /* WPTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSearchViewController.h; sourceTree = "<group>"; };
+		68A02C711683084700FDBB9B /* WPTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSearchViewController.m; sourceTree = "<group>"; };
+		68A02C721683084700FDBB9B /* WPTSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTSearchViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68654468166A585C0028DE77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68654470166A585C0028DE77 /* UIKit.framework in Frameworks */,
+				68654472166A585C0028DE77 /* Foundation.framework in Frameworks */,
+				68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68654460166A585C0028DE77 = {
+			isa = PBXGroup;
+			children = (
+				68A02C701683084700FDBB9B /* WPTSearchViewController.h */,
+				68A02C711683084700FDBB9B /* WPTSearchViewController.m */,
+				68A02C721683084700FDBB9B /* WPTSearchViewController.xib */,
+				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
+				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
+				686544A7166B46BC0028DE77 /* WPTWPRequest.h */,
+				686544A8166B46BC0028DE77 /* WPTWPRequest.m */,
+				68654475166A585C0028DE77 /* WPTrans */,
+				6865446E166A585C0028DE77 /* Frameworks */,
+				6865446C166A585C0028DE77 /* Products */,
+				688C3B1F1686C21800D34755 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		6865446C166A585C0028DE77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6865446B166A585C0028DE77 /* WPTrans.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6865446E166A585C0028DE77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6865446F166A585C0028DE77 /* UIKit.framework */,
+				68654471166A585C0028DE77 /* Foundation.framework */,
+				68654473166A585C0028DE77 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68654475166A585C0028DE77 /* WPTrans */ = {
+			isa = PBXGroup;
+			children = (
+				6865447E166A585C0028DE77 /* WPTAppDelegate.h */,
+				6865447F166A585C0028DE77 /* WPTAppDelegate.m */,
+				68654476166A585C0028DE77 /* Supporting Files */,
+			);
+			path = WPTrans;
+			sourceTree = "<group>";
+		};
+		68654476166A585C0028DE77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68654477166A585C0028DE77 /* WPTrans-Info.plist */,
+				68654478166A585C0028DE77 /* InfoPlist.strings */,
+				6865447B166A585C0028DE77 /* main.m */,
+				6865447D166A585C0028DE77 /* WPTrans-Prefix.pch */,
+				68654481166A585C0028DE77 /* Default.png */,
+				68654483166A585C0028DE77 /* Default@2x.png */,
+				68654485166A585C0028DE77 /* Default-568h@2x.png */,
+				6865448C166A599F0028DE77 /* TabBar.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		688C3B1F1686C21800D34755 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				688C3B211686C22D00D34755 /* wikipedias.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6865446A166A585C0028DE77 /* WPTrans */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68654489166A585C0028DE77 /* Build configuration list for PBXNativeTarget "WPTrans" */;
+			buildPhases = (
+				68654467166A585C0028DE77 /* Sources */,
+				68654468166A585C0028DE77 /* Frameworks */,
+				68654469166A585C0028DE77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WPTrans;
+			productName = WPTrans;
+			productReference = 6865446B166A585C0028DE77 /* WPTrans.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68654462166A585C0028DE77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WPT;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Garrett Albright";
+			};
+			buildConfigurationList = 68654465166A585C0028DE77 /* Build configuration list for PBXProject "WPTrans" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 68654460166A585C0028DE77;
+			productRefGroup = 6865446C166A585C0028DE77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6865446A166A585C0028DE77 /* WPTrans */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68654469166A585C0028DE77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6865447A166A585C0028DE77 /* InfoPlist.strings in Resources */,
+				68654482166A585C0028DE77 /* Default.png in Resources */,
+				68654484166A585C0028DE77 /* Default@2x.png in Resources */,
+				68654486166A585C0028DE77 /* Default-568h@2x.png in Resources */,
+				6865448D166A599F0028DE77 /* TabBar.xib in Resources */,
+				68A02C741683084700FDBB9B /* WPTSearchViewController.xib in Resources */,
+				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68654467166A585C0028DE77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6865447C166A585C0028DE77 /* main.m in Sources */,
+				68654480166A585C0028DE77 /* WPTAppDelegate.m in Sources */,
+				686544A6166B439B0028DE77 /* WPTLangSelViewController.m in Sources */,
+				686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */,
+				68A02C731683084700FDBB9B /* WPTSearchViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		68654478166A585C0028DE77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68654479166A585C0028DE77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68654487166A585C0028DE77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		68654488166A585C0028DE77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6865448A166A585C0028DE77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
+				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6865448B166A585C0028DE77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
+				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68654465166A585C0028DE77 /* Build configuration list for PBXProject "WPTrans" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68654487166A585C0028DE77 /* Debug */,
+				68654488166A585C0028DE77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68654489166A585C0028DE77 /* Build configuration list for PBXNativeTarget "WPTrans" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6865448A166A585C0028DE77 /* Debug */,
+				6865448B166A585C0028DE77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68654462166A585C0028DE77 /* Project object */;
+}
