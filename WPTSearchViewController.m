@@ -148,23 +148,11 @@
     return NO;
 }
 
-
-- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
-{
-    NSLog(@"WillBegin", nil);
-}
-
-- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
-{
-    NSLog(@"WillEnd", nil);
-}
-
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     NSLog(@"EndEditing");
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:[searchBar text] langcode:langPrefix thenCallSelector:@selector(retrieveResults:) onObject:self];
-    // @todo This is probably a race condition
     [nc addObserver:self selector:@selector(retrieveResults:) name:@"resultAvailable" object:nil];
 }
 
