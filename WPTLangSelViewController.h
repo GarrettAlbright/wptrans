@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WPTLangSelViewController : UITableViewController {
-    NSArray *languageList;
+
 }
 
 @end

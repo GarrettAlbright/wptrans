@@ -20,7 +20,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         UINavigationItem *ni = [self navigationItem];
-        [ni setTitle:[langDict objectForKey:@"loclang"]];
+        [ni setTitle:[langDict objectForKey:@"lang"]];
         langPrefix = [langDict objectForKey:@"prefix"];
     }
     return self;

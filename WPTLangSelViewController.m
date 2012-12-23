@@ -9,6 +9,7 @@
 #import "WPTLangSelViewController.h"
 #import "WPTWPRequest.h"
 #import "WPTSearchViewController.h"
+#import "WPTLangBase.h"
 
 @interface WPTLangSelViewController ()
 
@@ -22,78 +23,8 @@
     if (self) {
         UINavigationItem *ni = [self navigationItem];
         [ni setTitle:@"Select Language"];
-        // Custom initialization
     }
     return self;
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (!languageList) {
-        // @todo Get list of languages. For now, we hard-code the ten Wiki
-        // languages that have the most articles.
-        NSMutableArray *list = [[NSMutableArray alloc] init];
-        NSMutableDictionary *lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"English" forKey:@"loclang"];
-        [lang setValue:@"en" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-        
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Deutsch" forKey:@"loclang"];
-        [lang setValue:@"de" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Français" forKey:@"loclang"];
-        [lang setValue:@"fr" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Nederlands" forKey:@"loclang"];
-        [lang setValue:@"nl" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Italiano" forKey:@"loclang"];
-        [lang setValue:@"it" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Español" forKey:@"loclang"];
-        [lang setValue:@"es" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Русский" forKey:@"loclang"];
-        [lang setValue:@"ru" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Polski" forKey:@"loclang"];
-        [lang setValue:@"pl" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"日本語" forKey:@"loclang"];
-        [lang setValue:@"ja" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        lang = [[NSMutableDictionary alloc] init];
-        [lang setValue:@"Português" forKey:@"loclang"];
-        [lang setValue:@"pt" forKey:@"prefix"];
-        [list addObject:(NSDictionary *)lang];
-
-        NSSortDescriptor *byLoclang = [NSSortDescriptor sortDescriptorWithKey:@"loclang" ascending:YES];
-        languageList = [list sortedArrayUsingDescriptors:[NSArray arrayWithObject:byLoclang]];
-//        // Load list of available languages. This is done by querying the
-//        // English Wikipedia for the "Main Page" article. Since all available
-//        // Wikipedia (Wikipedias?) will theroetically have a translation of this
-//        // page, this is a way to get all "available" languages.
-//        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-//        WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:@"Main Page" langcode:@"en"];
-//        // @todo This is probably a race condition
-//        [nc addObserver:self selector:@selector(retrieveResults:) name:@"resultAvailable" object:nil];
-    }
 }
 
 - (void)viewDidLoad
@@ -118,13 +49,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return languageList ? 1 : 0;
+    return [[WPTLangBase sharedBase] allLangs] ? 1 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [languageList count];
+    return [[[WPTLangBase sharedBase] allLangs] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,11 +66,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
-    NSString *locLang = [[languageList objectAtIndex:[indexPath row]] objectForKey:@"loclang"];
-//    NSLog(@"Translation is %@", translation);
+    NSString *locLang = [[[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]] objectForKey:@"loclang"];
     [[cell textLabel] setText:locLang];
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-//    [[cell textLabel] setText:[[languageList objectAtIndex:[indexPath row]] objectForKey:@"translation"]];
     
     return cell;
 }
@@ -187,14 +116,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    NSDictionary *lang = [languageList objectAtIndex:[indexPath row]];
+    NSDictionary *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
     WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLangDict:lang];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
