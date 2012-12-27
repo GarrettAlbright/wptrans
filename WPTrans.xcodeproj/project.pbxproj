@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680CFD56168C5425007D0E42 /* WPTLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 680CFD55168C5425007D0E42 /* WPTLang.m */; };
 		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
 		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
 		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		680CFD54168C5425007D0E42 /* WPTLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLang.h; sourceTree = "<group>"; };
+		680CFD55168C5425007D0E42 /* WPTLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLang.m; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		68654471166A585C0028DE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +72,8 @@
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
+				680CFD54168C5425007D0E42 /* WPTLang.h */,
+				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				68A02C701683084700FDBB9B /* WPTSearchViewController.h */,
 				68A02C711683084700FDBB9B /* WPTSearchViewController.m */,
 				68A02C721683084700FDBB9B /* WPTSearchViewController.xib */,
@@ -211,6 +216,7 @@
 				686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */,
 				68A02C731683084700FDBB9B /* WPTSearchViewController.m in Sources */,
 				688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */,
+				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

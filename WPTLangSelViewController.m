@@ -10,6 +10,7 @@
 #import "WPTWPRequest.h"
 #import "WPTSearchViewController.h"
 #import "WPTLangBase.h"
+#import "WPTLang.h"
 
 @interface WPTLangSelViewController ()
 
@@ -66,7 +67,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
-    NSString *locLang = [[[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]] objectForKey:@"loclang"];
+    NSString *locLang = [[[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]] language];
     [[cell textLabel] setText:locLang];
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     
@@ -116,8 +117,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
-    WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLangDict:lang];
+    WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
+    WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
 

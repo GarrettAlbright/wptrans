@@ -7,6 +7,7 @@
 //
 
 #import "WPTLangBase.h"
+#import "WPTLang.h"
 
 @implementation WPTLangBase
 
@@ -34,15 +35,11 @@
             NSArray *langsFromPlist = [[NSArray alloc] initWithContentsOfFile:fname];
             NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithCapacity:[langsFromPlist count]];
             for (NSDictionary *lang in langsFromPlist) {
-                // @todo Is there a nicer way to only select wanted items from
-                // one dictionary and create another dictionary with them?
-                NSMutableDictionary *filteredLang = [[NSMutableDictionary alloc] initWithCapacity:2];
-                [filteredLang setObject:[lang objectForKey:@"loclang"] forKey:@"loclang"];
-                [filteredLang setObject:[lang objectForKey:@"prefix"] forKey:@"prefix"];
-                [filteredArray addObject:filteredLang];
+                WPTLang *langObj = [[WPTLang alloc] initWithLanguage:[lang objectForKey:@"loclang"] langcode:[lang objectForKey:@"prefix"] isEnabled:YES];
+                [filteredArray addObject:langObj];
             }
             // Sort the languages in "alphabetical" order
-            NSSortDescriptor *byLang = [NSSortDescriptor sortDescriptorWithKey:@"loclang" ascending:YES];
+            NSSortDescriptor *byLang = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
             langsAlphaOrder = [filteredArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:byLang]];
             
         }
@@ -54,9 +51,9 @@
 {
     // @todo Use filteredArrayUsingPredicate? Store dictionary keyed by
     // langcode even though that increases memory? Or just live with this?
-    for (NSDictionary *langDict in langsAlphaOrder) {
-        if ([[langDict objectForKey:@"prefix"] isEqual:langCode]) {
-            return [langDict objectForKey:@"loclang"];
+    for (WPTLang *lang in langsAlphaOrder) {
+        if ([[lang langcode] isEqual:langCode]) {
+            return [lang language];
         }
     }
     return nil;

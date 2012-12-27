@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WPTWPRequest.h"
+#import "WPTLang.h"
 
 @interface WPTSearchViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 {
@@ -15,6 +16,6 @@
     NSArray *results;
 }
 
-- (id)initWithLangDict:(NSDictionary *)langDict;
+- (id)initWithLang:(WPTLang *)lang;
 
 @end

@@ -9,6 +9,7 @@
 #import "WPTSearchViewController.h"
 #import "WPTWPRequest.h"
 #import "WPTLangBase.h"
+#import "WPTLang.h"
 
 @interface WPTSearchViewController ()
 
@@ -16,13 +17,13 @@
 
 @implementation WPTSearchViewController
 
-- (id)initWithLangDict:(NSDictionary *)langDict
+- (id)initWithLang:(WPTLang *)lang
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         UINavigationItem *ni = [self navigationItem];
-        [ni setTitle:[langDict objectForKey:@"loclang"]];
-        langPrefix = [langDict objectForKey:@"prefix"];
+        [ni setTitle:[lang language]];
+        langPrefix = [lang langcode];
     }
     return self;
 }
