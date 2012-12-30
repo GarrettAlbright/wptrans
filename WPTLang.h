@@ -15,5 +15,6 @@
 @property (nonatomic, readonly) NSString *langcode;
 
 - (WPTLang *)initWithLanguage: (NSString *)initLanguage langcode: (NSString *)initLangcode isEnabled: (BOOL)initEnabled;
+- (void)toggleEnabled;
 
 @end

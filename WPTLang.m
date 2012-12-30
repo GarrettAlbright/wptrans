@@ -22,5 +22,9 @@
     return self;
 }
 
+- (void)toggleEnabled
+{
+    isEnabled = !isEnabled;
+}
 
 @end

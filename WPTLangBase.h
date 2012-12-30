@@ -7,14 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WPTLang.h"
 
 @interface WPTLangBase : NSObject
 {
+    // @todo Should these be @syntehsized properties instead of these things?
     NSArray *langsAlphaOrder;
+    NSArray *filteredLangsAlphaOrder;
 }
 
 + (WPTLangBase *)sharedBase;
-- (NSString *)languageForCode: (NSString *)langCode;
+- (NSString *)languageForCode:(NSString *)langCode;
+- (WPTLang *)langObjectForCode:(NSString *)langcode;
 - (NSArray *)allLangs;
+- (NSArray *)enabledLangs;
+- (void)enabledLangsWasUpdated;
 
 @end

@@ -1,34 +1,27 @@
 //
-//  WPTLangSelectViewController.m
+//  WPTLangEditViewController.m
 //  WPTrans
 //
-//  Created by Garrett Albright on 12/2/12.
+//  Created by Garrett Albright on 12/30/12.
 //  Copyright (c) 2012 Garrett Albright. All rights reserved.
 //
 
-#import "WPTLangSelViewController.h"
-#import "WPTWPRequest.h"
-#import "WPTSearchViewController.h"
 #import "WPTLangEditViewController.h"
 #import "WPTLangBase.h"
 #import "WPTLang.h"
+#import "WPTLangSwitch.h"
 
-@interface WPTLangSelViewController ()
+@interface WPTLangEditViewController ()
 
 @end
 
-@implementation WPTLangSelViewController
+@implementation WPTLangEditViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        UINavigationItem *ni = [self navigationItem];
-        [ni setTitle:@"Language"];
-        // It stumped me for a while, but not having the colon after
-        // "toEditScreen" below is correct. Why? I'm not sure.
-        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toEditScreen)];
-        [ni setRightBarButtonItem:editButton];
+        [[self navigationItem] setTitle:@"Select Languages"];
     }
     return self;
 }
@@ -44,12 +37,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    // Reload the table data, since this might be appearing after the list of
-    // enabled languages was changed.
-    [[self tableView] reloadData];
+    [[WPTLangBase sharedBase] enabledLangsWasUpdated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,28 +53,40 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [[WPTLangBase sharedBase] enabledLangs] ? 1 : 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[WPTLangBase sharedBase] enabledLangs] count];
+    return [[[WPTLangBase sharedBase] allLangs] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = @"WPTLangSelViewControllerCell";
+    static NSString *CellIdentifier = @"WPTLangEditViewControllerRow";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
+    WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[lang language]];
-    [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+    WPTLangSwitch *langSwitch = [[WPTLangSwitch alloc] initWithLangcode:[lang langcode]];
+    [langSwitch addTarget:langSwitch action:@selector(toggled) forControlEvents:UIControlEventValueChanged];
+    [langSwitch setOn:[lang isEnabled]];
+    [cell setAccessoryView:langSwitch];
+    
     return cell;
 }
 
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
 
 /*
 // Override to support editing the table view.
@@ -120,15 +122,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
-    WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang];
-    [[self navigationController] pushViewController:searchViewController animated:YES];
-}
-
-- (void)toEditScreen
-{
-    WPTLangEditViewController *editViewController = [[WPTLangEditViewController alloc] init];
-    [[self navigationController] pushViewController:editViewController animated:YES];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		680CFD56168C5425007D0E42 /* WPTLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 680CFD55168C5425007D0E42 /* WPTLang.m */; };
+		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
+		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
 		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
 		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
 		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
@@ -29,6 +31,10 @@
 /* Begin PBXFileReference section */
 		680CFD54168C5425007D0E42 /* WPTLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLang.h; sourceTree = "<group>"; };
 		680CFD55168C5425007D0E42 /* WPTLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLang.m; sourceTree = "<group>"; };
+		6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSwitch.h; sourceTree = "<group>"; };
+		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
+		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
+		6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangEditViewController.m; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		68654471166A585C0028DE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +87,10 @@
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
 				686544A7166B46BC0028DE77 /* WPTWPRequest.h */,
 				686544A8166B46BC0028DE77 /* WPTWPRequest.m */,
+				6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */,
+				6842CBD01690096A00D248A9 /* WPTLangSwitch.m */,
+				6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */,
+				6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */,
 				688C3B231686CE2600D34755 /* WPTLangBase.h */,
 				688C3B241686CE2600D34755 /* WPTLangBase.m */,
 				68654475166A585C0028DE77 /* WPTrans */,
@@ -217,6 +227,8 @@
 				68A02C731683084700FDBB9B /* WPTSearchViewController.m in Sources */,
 				688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */,
 				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,
+				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
+				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
