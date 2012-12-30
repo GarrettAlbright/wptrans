@@ -11,6 +11,48 @@
 
 @implementation WPTAppDelegate
 
++ (void)initialize
+{
+    // The default available languages. This list was constructed by selecting
+    // the top twenty languages by speakers (note that's *total* speakers, not
+    // *native* speakers) from the list at
+    // http://www.ethnologue.org/ethno_docs/distribution.asp?by=size which
+    // itself is a source on the Wikipedia article "List of languages by total
+    // number of speakers." Each language was then inexpertly matched up with
+    // the Wikipedia language code equivalent. The list is flawed for our use
+    // case, since:
+    // - "Speakers" is not necessarily equivalent to "readers"
+    // - The actual usage data for those that use this app will probably differ
+    //   (perhaps more people are using this app to look up words in Dutch or
+    //   Swahili than Telugu and Tamil)
+    // - Probably many other reasons I have yet to consider
+    // …but for the lack of any other better lists at the moment, here we go.
+    NSArray *defaultLangs = [[NSArray alloc] initWithObjects:
+                             @"zh", // Chinese
+                             @"es", // Spanish
+                             @"en", // English
+                             @"ar", // Arabic
+                             @"hi", // Hindi
+                             @"bn", // Bengali
+                             @"pt", // Portuguese
+                             @"ru", // Russian
+                             @"ja", // Japanese
+                             @"de", // German
+                             @"jv", // Javanese
+                             @"pa", // Punjabi
+                             @"te", // Telugu
+                             @"vi", // Vietnamese
+                             @"mr", // Marathi
+                             @"fr", // French
+                             @"ko", // Korean
+                             @"ta", // Tamil
+                             @"it", // Italian
+                             @"ur", // Urdu
+                             nil];
+    NSDictionary *defaults = [NSDictionary dictionaryWithObject:defaultLangs forKey:@"enabledLanguages"];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -20,17 +62,6 @@
     [[self window] setRootViewController:navc];
     [self.window makeKeyAndVisible];
     return YES;
-
-//    - (id)initWithLangDict:(NSDictionary *)langDict
-//    {
-//        self = [super initWithNibName:nil bundle:nil];
-//        if (self) {
-//            UINavigationItem *ni = [self navigationItem];
-//            [ni setTitle:[langDict objectForKey:@"loclang"]];
-//            langPrefix = [langDict objectForKey:@"prefix"];
-//        }
-//        return self;
-//    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

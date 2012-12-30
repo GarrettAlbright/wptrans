@@ -21,6 +21,7 @@
 - (WPTLang *)langObjectForCode:(NSString *)langcode;
 - (NSArray *)allLangs;
 - (NSArray *)enabledLangs;
+- (NSArray *)enabledLangcodes;
 - (void)enabledLangsWasUpdated;
 
 @end
