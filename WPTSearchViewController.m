@@ -151,10 +151,7 @@
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    NSLog(@"EndEditing");
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:[searchBar text] langcode:langPrefix thenCallSelector:@selector(retrieveResults:) onObject:self];
-    [nc addObserver:self selector:@selector(retrieveResults:) name:@"resultAvailable" object:nil];
 }
 
 - (void)retrieveResults:(NSDictionary *)fullResults
