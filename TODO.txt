@@ -1,0 +1,36 @@
+The following is a list of features I feel that I must implement before
+attempting to submit this app to the App Store, *roughly* in order of
+priority.
+
+- A selectable list of languages that the user can enable and disable. This will
+  filter both the language selection list and the results list to only show
+  languages the user cares about.
+- A spinning progress indicator when a search is in progress.
+- Handling of connection failure when searching (currently this isn't handled at
+  all…)
+- Low memory warning support!!!
+- Handling of a "zero results" case.
+- When a search result is selected, the user is given the option to:
+  - Go to the Wikipedia page for that result (switches to Safari)
+  - Copy the result text to the clipboard
+- Make sure strings are translatable, even if no translations ship. I mean, duh.
+
+The following is a list of features which I wish to implement, but possibly not
+until after the first shipping version:
+
+- No more compiler warnings. =[
+- Traditional Chinese support.
+  - If you're not aware as to why this is problematic, the short story is that
+    Wikipedia doesn't have separate zh-hans and zh-hant versions; they have a
+    single zh version which uses software to automatically translate between
+    the two. If you send a HTTP request to the zh Wikipedia for an article and
+    don't ask for zh-hant in the Accept-Language header, Wikipedia sends you zh-
+    hans. I suspect, internally, everything is stored in zh-hans, but I'm not
+    sure. At least for our purposes, there doesn't seem to be a way to get
+    article titles in zh-hant using the API (that I can recall), but even if
+    it were possible, supporting both zh-hant and zh-hans would involve making
+    two separate queries! Perhaps the solution here is to (gulp) implement zh-
+    hant translation client-side.
+- Result bookmarking.
+- iPad form factor support. (And since I only have an iPad 1 currently, this
+  would also mean making sure iOS 5 is supported.)
