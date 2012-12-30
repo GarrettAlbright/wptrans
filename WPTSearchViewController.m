@@ -157,7 +157,14 @@
 - (void)retrieveResults:(NSDictionary *)fullResults
 {
     NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
-    results = [[fullResults objectForKey:@"languageResults"] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
+    NSMutableArray *filteredResults = [[NSMutableArray alloc] init];
+    NSArray *enabledLangcodes = [[WPTLangBase sharedBase] enabledLangcodes];
+    for (NSDictionary *result in [fullResults objectForKey:@"languageResults"]) {
+        if ([enabledLangcodes containsObject:[result objectForKey:@"langcode"]]) {
+            [filteredResults addObject:result];
+        }
+    }
+    results = [filteredResults sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
     NSString *finalTitle = [fullResults objectForKey:@"finalTitle"];
     if (finalTitle) {
         [[[self searchDisplayController] searchBar] setText:finalTitle];
