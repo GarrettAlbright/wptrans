@@ -120,7 +120,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[indexPath row]];
+    WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
     WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
