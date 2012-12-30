@@ -2,9 +2,6 @@ The following is a list of features I feel that I must implement before
 attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
-- A selectable list of languages that the user can enable and disable. This will
-  filter both the language selection list and the results list to only show
-  languages the user cares about.
 - A spinning progress indicator when a search is in progress.
 - Handling of connection failure when searching (currently this isn't handled at
   all…)
