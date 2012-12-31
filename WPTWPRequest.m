@@ -28,11 +28,21 @@
     [incomingData appendData:data];
 }
 
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [self handleError:error];
+}
+
+-(void)handleError:(NSError *)error {
+    [receiver wikipediaQueryDidCauseError:error];
+}
+
 -(void)connectionDidFinishLoading:(NSURLConnection *)conn {
     NSError *jsonError;
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:incomingData options:0 error:&jsonError];
     if (jsonResult == nil) {
-        NSLog(@"%@", jsonError);
+        [self handleError:jsonError];
         return;
     }
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];

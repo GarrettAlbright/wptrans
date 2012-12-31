@@ -114,5 +114,26 @@
     [activityIndicator stopAnimating];
 }
 
+-(void)wikipediaQueryDidCauseError:(NSError *)error
+{
+    [activityIndicator stopAnimating];
+    // Set our own error strings for some cases; use the default for others
+    NSString *errorMessage;
+    switch ([error code]) {
+        case -1003:
+            // Server couldn't be accessed.
+            errorMessage = @"Wikipedia could not be accessed. Please try again later.";
+            break;
+        case 3840:
+            // JSON parsing broke.
+            errorMessage = @"Wikipedia’s response could not be understood. Its servers may be experiencing some trouble. Please try again later.";
+            break;
+        default:
+            errorMessage = [error localizedDescription];
+            break;
+    }
+    NSLog(@"%@", error);
+    [[[UIAlertView alloc] initWithTitle:@"Connection error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:nil] show];
+}
 
 @end

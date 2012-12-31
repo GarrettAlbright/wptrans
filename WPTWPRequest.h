@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WPTWPRequest : NSObject {
+@interface WPTWPRequest : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *connection;
     NSMutableData *incomingData;
     SEL callback;
     id receiver;
 }
 
-- (WPTWPRequest *)initWithQueryTerm:(NSString *)queryTerm langcode:(NSString *)langcode thenCallSelector:(SEL)selector onObject:(id)object;
+- (WPTWPRequest *)initWithQueryTerm:(NSString *)queryTerm langcode:(NSString *)langcode delegate:(id)object;
+- (void)handleError: (NSError *)error;
+
 @end
