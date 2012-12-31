@@ -8,7 +8,8 @@
 
 #import "WPTLangSelViewController.h"
 #import "WPTWPRequest.h"
-#import "WPTSearchViewController.h"
+//#import "WPTSearchViewController.h"
+#import "WPTNewSearchViewController.h"
 #import "WPTLangEditViewController.h"
 #import "WPTLangBase.h"
 #import "WPTLang.h"
@@ -121,7 +122,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
-    WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang];
+    WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
 

@@ -10,6 +10,8 @@
 		680CFD56168C5425007D0E42 /* WPTLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 680CFD55168C5425007D0E42 /* WPTLang.m */; };
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
 		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
+		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
+		6842CBDA1690475700D248A9 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */; };
 		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
 		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
 		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
@@ -35,6 +37,9 @@
 		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
 		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
 		6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangEditViewController.m; sourceTree = "<group>"; };
+		6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTNewSearchViewController.h; sourceTree = "<group>"; };
+		6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTNewSearchViewController.m; sourceTree = "<group>"; };
+		6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		68654471166A585C0028DE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,14 +80,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6842CBDB1690679F00D248A9 /* WPTSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				68A02C701683084700FDBB9B /* WPTSearchViewController.h */,
+				68A02C711683084700FDBB9B /* WPTSearchViewController.m */,
+				68A02C721683084700FDBB9B /* WPTSearchViewController.xib */,
+			);
+			name = WPTSearchViewController;
+			sourceTree = "<group>";
+		};
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
 				680CFD54168C5425007D0E42 /* WPTLang.h */,
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
-				68A02C701683084700FDBB9B /* WPTSearchViewController.h */,
-				68A02C711683084700FDBB9B /* WPTSearchViewController.m */,
-				68A02C721683084700FDBB9B /* WPTSearchViewController.xib */,
+				6842CBDB1690679F00D248A9 /* WPTSearchViewController */,
+				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
+				6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */,
+				6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
 				686544A7166B46BC0028DE77 /* WPTWPRequest.h */,
@@ -210,6 +226,7 @@
 				6865448D166A599F0028DE77 /* TabBar.xib in Resources */,
 				68A02C741683084700FDBB9B /* WPTSearchViewController.xib in Resources */,
 				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
+				6842CBDA1690475700D248A9 /* WPTNewSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +246,7 @@
 				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,
 				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
 				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
+				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
