@@ -2,7 +2,6 @@ The following is a list of features I feel that I must implement before
 attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
-- A spinning progress indicator when a search is in progress.
 - Handling of connection failure when searching (currently this isn't handled at
   all…)
 - Low memory warning support!!!
@@ -13,8 +12,9 @@ priority.
 - Make sure strings are translatable, even if no translations ship. I mean, duh.
 
 The following is a list of features which I wish to implement, but possibly not
-until after the first shipping version:
+until after the first shipping version, in no particular order:
 
+- Language enable/disable screen should display as a modal.
 - No more compiler warnings. =[
 - Traditional Chinese support.
   - If you're not aware as to why this is problematic, the short story is that
