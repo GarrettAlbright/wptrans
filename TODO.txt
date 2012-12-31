@@ -2,8 +2,6 @@ The following is a list of features I feel that I must implement before
 attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
-- Handling of connection failure when searching (currently this isn't handled at
-  all…)
 - Low memory warning support!!!
 - Handling of a "zero results" case.
 - When a search result is selected, the user is given the option to:
