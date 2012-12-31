@@ -9,6 +9,7 @@
 #import "WPTNewSearchViewController.h"
 #import "WPTLang.h"
 #import "WPTWPRequest.h"
+#import "WPTWPRequestDelegate.h"
 #import "WPTLangBase.h"
 
 @interface WPTNewSearchViewController ()
@@ -78,7 +79,7 @@
 {
     [searchBar resignFirstResponder];
     [activityIndicator startAnimating];
-    WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:[searchBar text] langcode:langcode thenCallSelector:@selector(retrieveResults:) onObject:self];
+    WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:[searchBar text] langcode:langcode delegate:self];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -94,7 +95,7 @@
 }
 
 
-- (void)retrieveResults:(NSDictionary *)fullResults
+- (void)wikipediaQueryResultsReceived:(NSDictionary *)fullResults
 {
     NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
     NSMutableArray *filteredResults = [[NSMutableArray alloc] init];

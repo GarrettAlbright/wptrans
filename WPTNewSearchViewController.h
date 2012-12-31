@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WPTLang.h"
+#import "WPTWPRequestDelegate.h"
 
-@interface WPTNewSearchViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate> {
+@interface WPTNewSearchViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, WPTWPRequestDelegate> {
     NSString *langcode;
     NSArray *results;
     

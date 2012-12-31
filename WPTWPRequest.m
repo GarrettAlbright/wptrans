@@ -7,11 +7,12 @@
 //
 
 #import "WPTWPRequest.h"
+#import "WPTWPRequestDelegate.h"
 #import "WPTLangBase.h"
 
 @implementation WPTWPRequest
 
--(WPTWPRequest *) initWithQueryTerm:(NSString *)queryTerm langcode:(NSString *)langcode thenCallSelector:(SEL)selector onObject:(id)object {
+-(WPTWPRequest *) initWithQueryTerm:(NSString *)queryTerm langcode:(NSString *)langcode delegate:(id)delegateObject {
     // @todo There's basically no error checking going on here. =[
     self = [super init];
     NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/w/api.php?action=query&prop=langlinks&format=json&redirects=&lllimit=500&titles=%@", langcode, queryTerm, nil];
@@ -19,8 +20,7 @@
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     incomingData = [[NSMutableData alloc] init];
     connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
-    callback = selector;
-    receiver = object;
+    receiver = delegateObject;
     return self;
 }
 
@@ -63,10 +63,7 @@
         [langResults addObject:(NSDictionary *)result];
     }
     [result setObject:langResults forKey:@"languageResults"];
-    // @todo This is probably the wrong pattern - we probably want to use a
-    // delegate pattern so that the callback is predefined (if that makes any
-    // sense).
-    [receiver performSelector:callback withObject:result];
+    [receiver wikipediaQueryResultsReceived:(NSDictionary *)result];
 }
 
 @end

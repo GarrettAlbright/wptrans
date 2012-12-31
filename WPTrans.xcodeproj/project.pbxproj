@@ -40,6 +40,7 @@
 		6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTNewSearchViewController.h; sourceTree = "<group>"; };
 		6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTNewSearchViewController.m; sourceTree = "<group>"; };
 		6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTNewSearchViewController.xib; sourceTree = "<group>"; };
+		6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTWPRequestDelegate.h; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		68654471166A585C0028DE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +102,7 @@
 				6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
+				6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */,
 				686544A7166B46BC0028DE77 /* WPTWPRequest.h */,
 				686544A8166B46BC0028DE77 /* WPTWPRequest.m */,
 				6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */,
