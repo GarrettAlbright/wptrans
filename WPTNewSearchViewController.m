@@ -78,8 +78,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
-    [activityIndicator startAnimating];
-    WPTWPRequest *req = [[WPTWPRequest alloc] initWithQueryTerm:[searchBar text] langcode:langcode delegate:self];
+    [self startSearch];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -94,6 +93,11 @@
     [searchBar setShowsCancelButton:NO animated:YES];
 }
 
+- (void)startSearch
+{
+    [activityIndicator startAnimating];
+    [[WPTWPRequest alloc] initWithQueryTerm:[searchTermBar text] langcode:langcode delegate:self];
+}
 
 - (void)wikipediaQueryResultsReceived:(NSDictionary *)fullResults
 {
@@ -133,7 +137,14 @@
             break;
     }
     NSLog(@"%@", error);
-    [[[UIAlertView alloc] initWithTitle:@"Connection error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"Connection error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // Was "Try Again" clicked?
+    if (buttonIndex == 1) {
+        [self startSearch];
+    }
 }
 
 @end
