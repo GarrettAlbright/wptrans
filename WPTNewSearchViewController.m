@@ -18,15 +18,6 @@
 
 @implementation WPTNewSearchViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (id)initWithLang:(WPTLang *)lang
 {
     self = [super initWithNibName:nil bundle:nil];
@@ -36,13 +27,6 @@
         langcode = [lang langcode];
     }
     return self;
-}
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
