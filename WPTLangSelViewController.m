@@ -42,12 +42,18 @@
     [[self tableView] reloadData];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    NSDictionary *lastSearch = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastSearch"];
+    if (lastSearch) {
+        WPTLang *lang = [[WPTLangBase sharedBase] langObjectForCode:[lastSearch objectForKey:@"langcode"]];
+        if (lang) {
+            WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:[lastSearch objectForKey:@"searchTerm"]];
+            [[self navigationController] pushViewController:searchViewController animated:YES];
+        }
+    }
 
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -80,7 +86,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
-    WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang];
+    WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:nil];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
 

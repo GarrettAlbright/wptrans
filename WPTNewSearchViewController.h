@@ -12,6 +12,7 @@
 
 @interface WPTNewSearchViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, WPTWPRequestDelegate, UIAlertViewDelegate>
 {
+    NSString *searchTerm;
     NSString *langcode;
     NSArray *results;
     
@@ -20,7 +21,7 @@
     IBOutlet UISearchBar *searchTermBar;
 }
 
-- (id)initWithLang:(WPTLang *)lang;
+- (id)initWithLang:(WPTLang *)lang searchTerm:(NSString *)searchTerm;
 - (void)startSearch;
 
 @end

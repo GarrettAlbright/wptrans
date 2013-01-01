@@ -18,21 +18,31 @@
 
 @implementation WPTNewSearchViewController
 
-- (id)initWithLang:(WPTLang *)lang
+- (id)initWithLang:(WPTLang *)lang searchTerm:(NSString *)initSearchTerm
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         UINavigationItem *ni = [self navigationItem];
         [ni setTitle:[lang language]];
         langcode = [lang langcode];
+        searchTerm = initSearchTerm;
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // If the view appeared with a search term in the field, but no results,
+    // then fire up the search and get results.
+    if (searchTerm && results == nil) {
+        [searchTermBar setText:searchTerm];
+        [self startSearch];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"lastSearch"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -79,7 +89,13 @@
 
 - (void)startSearch
 {
+    // @todo Save search query as user data so that we can reload the search
+    // at next start-up of this app if it appears it was suspended before the
+    // search screen was closed.
     [activityIndicator startAnimating];
+    NSString *searchTerm = [searchTermBar text];
+    NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[searchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
+    [[NSUserDefaults standardUserDefaults] setObject:lastSearch forKey:@"lastSearch"];
     [[WPTWPRequest alloc] initWithQueryTerm:[searchTermBar text] langcode:langcode delegate:self];
 }
 
@@ -120,7 +136,6 @@
             errorMessage = [error localizedDescription];
             break;
     }
-    NSLog(@"%@", error);
     [[[UIAlertView alloc] initWithTitle:@"Connection error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
 }
 
