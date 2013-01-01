@@ -81,6 +81,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *result = [results objectAtIndex:[indexPath row]];
+    [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Copy", @"View Article", nil] showInView:[self view]];
+}
+
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
@@ -130,7 +136,7 @@
     [activityIndicator stopAnimating];
 }
 
--(void)wikipediaQueryDidCauseError:(NSError *)error
+- (void)wikipediaQueryDidCauseError:(NSError *)error
 {
     [activityIndicator stopAnimating];
     // Set our own error strings for some cases; use the default for others
@@ -156,10 +162,25 @@
     [[[UIAlertView alloc] initWithTitle:@"Article search error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     // Was "Try Again" clicked?
     if (buttonIndex == 1) {
         [self startSearch];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSDictionary *result = [results objectAtIndex:[[resultsTable indexPathForSelectedRow] row]];
+    if (buttonIndex == 0) {
+        // "Copy" button
+        [[UIPasteboard generalPasteboard] setString:[result objectForKey:@"translation"]];
+    }
+    else if (buttonIndex == 1) {
+        NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
+        NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [[UIApplication sharedApplication] openURL:url];
     }
 }
 
