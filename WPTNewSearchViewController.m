@@ -53,7 +53,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [results count];
+    NSInteger count = [results count];
+    if (count == 0) {
+        // Return 1, since we're going to show our "no results" row.
+        return 1;
+    }
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,9 +68,16 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
-    NSDictionary *result = [results objectAtIndex:[indexPath row]];
-    [[cell detailTextLabel] setText:[result objectForKey:@"translation"]];
-    [[cell textLabel] setText:[result objectForKey:@"language"]];
+    NSInteger index = [indexPath row];
+    if (index == 0 && [results count] == 0) {
+        // Show the "no results" message.
+        [[cell detailTextLabel] setText:@"No translations found."];
+    }
+    else {
+        NSDictionary *result = [results objectAtIndex:[indexPath row]];
+        [[cell detailTextLabel] setText:[result objectForKey:@"translation"]];
+        [[cell textLabel] setText:[result objectForKey:@"language"]];
+    }
     return cell;
 }
 
