@@ -122,6 +122,7 @@
 {
     [activityIndicator stopAnimating];
     // Set our own error strings for some cases; use the default for others
+    // @todo Should probably be checking domain too, not just code…
     NSString *errorMessage;
     switch ([error code]) {
         case -1003:
@@ -132,11 +133,15 @@
             // JSON parsing broke.
             errorMessage = @"Wikipedia’s response could not be understood. Its servers may be experiencing some trouble. Please try again later.";
             break;
+        case 404:
+            // No article found.
+            errorMessage = @"An article with that title could not be found. Please check your typing and try again.";
+            break;
         default:
             errorMessage = [error localizedDescription];
             break;
     }
-    [[[UIAlertView alloc] initWithTitle:@"Connection error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"Article search error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

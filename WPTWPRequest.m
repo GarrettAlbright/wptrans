@@ -61,9 +61,14 @@
         NSString *normalizedTitle = [[normalized lastObject] objectForKey:@"to"];
         [result setObject:normalizedTitle forKey:@"finalTitle"];
     }
-    NSArray *langlinks = [[[[[jsonResult objectForKey:@"query"] objectForKey:@"pages"] allValues] objectAtIndex:0] objectForKey:@"langlinks"];
+    NSDictionary *page = [[[[jsonResult objectForKey:@"query"] objectForKey:@"pages"] allValues] objectAtIndex:0];
+    if ([[page objectForKey:@"missing"] isEqual:@""]) {
+        [self handleError:[NSError errorWithDomain:@"WPTWPRequest" code:404 userInfo:nil]];
+        return;
+    }
+    NSArray *langlinks = [page objectForKey:@"langlinks"];
     // Create a dictionary to store language results
-    NSMutableArray *langResults = [[NSMutableArray alloc] init];
+    NSMutableArray *langResults = [[NSMutableArray alloc] initWithCapacity:[langlinks count]];
     WPTLangBase *langBase = [WPTLangBase sharedBase];
     for (NSDictionary *langSet in langlinks) {
         NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithCapacity:3];
