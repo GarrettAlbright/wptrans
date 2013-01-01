@@ -13,6 +13,11 @@ The following is a list of features which I wish to implement, but possibly not
 until after the first shipping version, in no particular order:
 
 - Language enable/disable screen should display as a modal.
+- When a language on language enable/disable screen is selected (not toggled,)
+  the user can:
+  - See the native and English language name (native name sometimes doesn’t
+    fit on table row beside the toggle switch…)
+  - Go to the front page of that Wikipedia (switches to Safari)
 - No more compiler warnings. =[
 - Traditional Chinese support.
   - If you're not aware as to why this is problematic, the short story is that
