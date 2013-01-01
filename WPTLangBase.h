@@ -12,8 +12,8 @@
 @interface WPTLangBase : NSObject
 {
     // @todo Should these be @syntehsized properties instead of these things?
-    NSArray *langsAlphaOrder;
-    NSArray *filteredLangsAlphaOrder;
+    NSArray *langs;
+    NSArray *filteredLangs;
 }
 
 + (WPTLangBase *)sharedBase;
@@ -23,5 +23,6 @@
 - (NSArray *)enabledLangs;
 - (NSArray *)enabledLangcodes;
 - (void)enabledLangsWasUpdated;
+- (void)nilOut;
 
 @end

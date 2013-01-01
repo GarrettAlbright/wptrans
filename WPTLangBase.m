@@ -29,25 +29,14 @@
 {
     self = [super init];
     if (self) {
-        if (!langsAlphaOrder) {
-            NSBundle *appBundle = [NSBundle mainBundle];
-            NSString *fname = [appBundle pathForResource:@"wikipedias" ofType:@"plist"];
-            NSArray *langsFromPlist = [[NSArray alloc] initWithContentsOfFile:fname];
-            NSArray *enabledLangs = [[NSUserDefaults standardUserDefaults] arrayForKey:@"enabledLanguages"];
-            NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithCapacity:[langsFromPlist count]];
-            for (NSDictionary *lang in langsFromPlist) {
-                NSString *langcode = [lang objectForKey:@"prefix"];
-                BOOL inDefault = [enabledLangs containsObject:langcode];
-                WPTLang *langObj = [[WPTLang alloc] initWithLanguage:[lang objectForKey:@"loclang"] langcode:langcode isEnabled:inDefault];
-                [filteredArray addObject:langObj];
-            }
-            // Sort the languages in "alphabetical" order
-            NSSortDescriptor *byLang = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
-            langsAlphaOrder = [filteredArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:byLang]];
-            
-        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nilOut) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
+}
+
+-(void)nilOut {
+    langs = nil;
+    filteredLangs = nil;
 }
 
 -(NSString *)languageForCode:(NSString *)langcode
@@ -63,7 +52,7 @@
 {
     // @todo Use filteredArrayUsingPredicate? Store dictionary keyed by
     // langcode even though that increases memory? Or just live with this?
-    for (WPTLang *lang in langsAlphaOrder) {
+    for (WPTLang *lang in [self allLangs]) {
         if ([[lang langcode] isEqual:langcode]) {
             return lang;
         }
@@ -72,15 +61,31 @@
 }
 
 -(NSArray *)allLangs {
-    return langsAlphaOrder;
+    if (!langs) {
+        NSBundle *appBundle = [NSBundle mainBundle];
+        NSString *fname = [appBundle pathForResource:@"wikipedias" ofType:@"plist"];
+        NSArray *langsFromPlist = [[NSArray alloc] initWithContentsOfFile:fname];
+        NSArray *enabledLangs = [[NSUserDefaults standardUserDefaults] arrayForKey:@"enabledLanguages"];
+        NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithCapacity:[langsFromPlist count]];
+        for (NSDictionary *lang in langsFromPlist) {
+            NSString *langcode = [lang objectForKey:@"prefix"];
+            BOOL inDefault = [enabledLangs containsObject:langcode];
+            WPTLang *langObj = [[WPTLang alloc] initWithLanguage:[lang objectForKey:@"loclang"] langcode:langcode isEnabled:inDefault];
+            [filteredArray addObject:langObj];
+        }
+        // Sort the languages in "alphabetical" order
+        NSSortDescriptor *byLang = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
+        langs = [filteredArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:byLang]];
+    }
+    return langs;
 }
 
 -(NSArray *)enabledLangs {
-    if (!filteredLangsAlphaOrder) {
+    if (!filteredLangs) {
         NSPredicate *filter = [NSPredicate predicateWithFormat:@"isEnabled == YES"];
-        filteredLangsAlphaOrder = [langsAlphaOrder filteredArrayUsingPredicate:filter];
+        filteredLangs = [[self allLangs] filteredArrayUsingPredicate:filter];
     }
-    return filteredLangsAlphaOrder;
+    return filteredLangs;
 }
 
 -(NSArray *)enabledLangcodes {
@@ -95,7 +100,7 @@
 -(void)enabledLangsWasUpdated {
     // Nil out filteredLangsAlphaOrder so that the next call to enabledLangs
     // will rebuild the list.
-    filteredLangsAlphaOrder = nil;
+    filteredLangs = nil;
     [[NSUserDefaults standardUserDefaults] setObject:[self enabledLangcodes] forKey:@"enabledLanguages"];
 }
 
