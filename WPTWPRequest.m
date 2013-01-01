@@ -13,14 +13,15 @@
 @implementation WPTWPRequest
 
 -(WPTWPRequest *) initWithQueryTerm:(NSString *)queryTerm langcode:(NSString *)langcode delegate:(id)delegateObject {
-    // @todo There's basically no error checking going on here. =[
     self = [super init];
-    NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/w/api.php?action=query&prop=langlinks&format=json&redirects=&lllimit=500&titles=%@", langcode, queryTerm, nil];
-    NSURL *url = [NSURL URLWithString: [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    incomingData = [[NSMutableData alloc] init];
-    connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
-    receiver = delegateObject;
+    if (self) {
+        NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/w/api.php?action=query&prop=langlinks&format=json&redirects=&lllimit=500&titles=%@", langcode, queryTerm, nil];
+        NSURL *url = [NSURL URLWithString: [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        incomingData = [[NSMutableData alloc] init];
+        connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+        receiver = delegateObject;
+    }
     return self;
 }
 
