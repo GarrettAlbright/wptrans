@@ -2,7 +2,6 @@ The following is a list of features I feel that I must implement before
 attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
-- Low memory warning support!!!
 - Handling of a "zero results" case.
 - When a search result is selected, the user is given the option to:
   - Go to the Wikipedia page for that result (switches to Safari)
