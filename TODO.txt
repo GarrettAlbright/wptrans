@@ -2,7 +2,7 @@ The following is a list of features I feel that I must implement before
 attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
-- Make sure strings are translatable, even if no translations ship. I mean, duh.
+  (List now empty! Woo hoo!)
 
 The following is a list of features which I wish to implement, but possibly not
 until after the first shipping version, in no particular order:
