@@ -45,6 +45,11 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"lastSearch"];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait) || UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return results ? 1 : 0;
