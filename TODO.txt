@@ -3,7 +3,6 @@ attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
 - Make sure strings are translatable, even if no translations ship. I mean, duh.
-- Confirm iOS 5 (and earlier?) support.
 
 The following is a list of features which I wish to implement, but possibly not
 until after the first shipping version, in no particular order:
