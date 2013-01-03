@@ -28,3 +28,6 @@ Japan" and "McDonald's," WPTrans can work well.
 The ultimate goal is to get WPTrans to a state where it could be in good
 conscience submitted to the App Store (as a free app), while developing my iOS
 skills along the way.
+
+About the Developer:
+Garrett Albright is an American living in Japan with his Chinese fiancée.

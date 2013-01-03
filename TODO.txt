@@ -3,6 +3,7 @@ attempting to submit this app to the App Store, *roughly* in order of
 priority.
 
 - Make sure strings are translatable, even if no translations ship. I mean, duh.
+- Confirm iOS 5 (and earlier?) support.
 
 The following is a list of features which I wish to implement, but possibly not
 until after the first shipping version, in no particular order:
@@ -27,5 +28,4 @@ until after the first shipping version, in no particular order:
     two separate queries! Perhaps the solution here is to (gulp) implement zh-
     hant translation client-side.
 - Result bookmarking.
-- iPad form factor support. (And since I only have an iPad 1 currently, this
-  would also mean making sure iOS 5 is supported.)
+- iPad form factor support.
