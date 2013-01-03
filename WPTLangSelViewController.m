@@ -8,7 +8,6 @@
 
 #import "WPTLangSelViewController.h"
 #import "WPTWPRequest.h"
-//#import "WPTSearchViewController.h"
 #import "WPTNewSearchViewController.h"
 #import "WPTLangEditViewController.h"
 #import "WPTLangBase.h"
