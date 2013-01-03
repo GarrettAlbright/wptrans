@@ -21,7 +21,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[self navigationItem] setTitle:@"Select Languages"];
+        NSString *selectLangsText = NSLocalizedString(@"Select Languages", @"Title of language enable/disable screen.");
+        [[self navigationItem] setTitle:selectLangsText];
     }
     return self;
 }

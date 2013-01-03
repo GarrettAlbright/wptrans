@@ -25,7 +25,8 @@
     self = [super initWithStyle:style];
     if (self) {
         UINavigationItem *ni = [self navigationItem];
-        [ni setTitle:@"Language"];
+        NSString *selectLangText = NSLocalizedString(@"Select Language", @"Title of search language selection screen.");
+        [ni setTitle:selectLangText];
         // It stumped me for a while, but not having the colon after
         // "toEditScreen" below is correct. Why? I'm not sure.
         UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toEditScreen)];

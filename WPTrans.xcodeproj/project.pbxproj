@@ -11,7 +11,6 @@
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
 		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
 		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
-		6842CBDA1690475700D248A9 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */; };
 		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
 		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
 		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
@@ -26,6 +25,7 @@
 		686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 686544A8166B46BC0028DE77 /* WPTWPRequest.m */; };
 		688C3B221686C22D00D34755 /* wikipedias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688C3B211686C22D00D34755 /* wikipedias.plist */; };
 		688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 688C3B241686CE2600D34755 /* WPTLangBase.m */; };
+		68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,6 @@
 		6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangEditViewController.m; sourceTree = "<group>"; };
 		6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTNewSearchViewController.h; sourceTree = "<group>"; };
 		6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTNewSearchViewController.m; sourceTree = "<group>"; };
-		6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 		6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTWPRequestDelegate.h; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -60,6 +59,7 @@
 		688C3B211686C22D00D34755 /* wikipedias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wikipedias.plist; sourceTree = "<group>"; };
 		688C3B231686CE2600D34755 /* WPTLangBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangBase.h; sourceTree = "<group>"; };
 		688C3B241686CE2600D34755 /* WPTLangBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangBase.m; sourceTree = "<group>"; };
+		68B861D616958C2900AFE078 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
 				6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */,
-				6842CBD81690475700D248A9 /* WPTNewSearchViewController.xib */,
+				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
 				6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */,
@@ -211,7 +211,7 @@
 				68654486166A585C0028DE77 /* Default-568h@2x.png in Resources */,
 				6865448D166A599F0028DE77 /* TabBar.xib in Resources */,
 				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
-				6842CBDA1690475700D248A9 /* WPTNewSearchViewController.xib in Resources */,
+				68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +243,14 @@
 				68654479166A585C0028DE77 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68B861D616958C2900AFE078 /* en */,
+			);
+			name = WPTNewSearchViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

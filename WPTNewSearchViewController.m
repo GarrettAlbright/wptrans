@@ -76,7 +76,8 @@
     NSInteger index = [indexPath row];
     if (index == 0 && [results count] == 0) {
         // Show the "no results" message.
-        [[cell detailTextLabel] setText:@"No translations found."];
+        NSString *noTransFound = NSLocalizedString(@"No translations found.", @"Error message shown when no translations for a search term were found.");
+        [[cell detailTextLabel] setText:noTransFound];
     }
     else {
         NSDictionary *result = [results objectAtIndex:[indexPath row]];
@@ -89,7 +90,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *result = [results objectAtIndex:[indexPath row]];
-    [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Copy", @"View Article", nil] showInView:[self view]];
+    NSString *cancelText = NSLocalizedString(@"Cancel", @"Allows user to cancel out of menu shown when search result is selected.");
+    NSString *copyText = NSLocalizedString(@"Copy", @"Allows user to copy search result to clipboard.");
+    NSString *viewArticleText = NSLocalizedString(@"View Article", @"Launches search result's corresponding Wikipedia article in the browser.");
+    [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:cancelText destructiveButtonTitle:nil otherButtonTitles:copyText, viewArticleText, nil] showInView:[self view]];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -150,21 +154,24 @@
     switch ([error code]) {
         case -1003:
             // Server couldn't be accessed.
-            errorMessage = @"Wikipedia could not be accessed. Please try again later.";
+            errorMessage = NSLocalizedString(@"Wikipedia could not be accessed. Please try again later.", @"Body of error message shown when the Wikipedia server is not accessible.");
             break;
         case 3840:
             // JSON parsing broke.
-            errorMessage = @"Wikipedia’s response could not be understood. Its servers may be experiencing some trouble. Please try again later.";
+            errorMessage = NSLocalizedString(@"Wikipedia’s response could not be understood. Its servers may be experiencing some trouble. Please try again later.", @"Body of error message shown when the Wikipedia server's response could not be parsed.");
             break;
         case 404:
             // No article found.
-            errorMessage = @"An article with that title could not be found. Please check your typing and try again.";
+            errorMessage = NSLocalizedString(@"An article with that title could not be found. Please check your typing and try again.", @"Body of error message shown when an article cannot be found.");
             break;
         default:
             errorMessage = [error localizedDescription];
             break;
     }
-    [[[UIAlertView alloc] initWithTitle:@"Article search error" message:errorMessage delegate:self cancelButtonTitle: @"Cancel" otherButtonTitles:@"Try Again", nil] show];
+    NSString *errorTitleText = NSLocalizedString(@"Article Search Error", @"Title of error window shown when a problem occurs when searching for a Wikipedia article.");
+    NSString *cancelText = NSLocalizedString(@"Cancel", @"Title of cancel button in Wikipedia server connection error window.");
+    NSString *tryAgainText = NSLocalizedString(@"Try Again", @"Title of try again button in Wikipedia server connection error window.");
+    [[[UIAlertView alloc] initWithTitle:errorTitleText message:errorMessage delegate:self cancelButtonTitle:cancelText otherButtonTitles:tryAgainText, nil] show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
