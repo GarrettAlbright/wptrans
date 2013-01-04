@@ -26,6 +26,8 @@
 		688C3B221686C22D00D34755 /* wikipedias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688C3B211686C22D00D34755 /* wikipedias.plist */; };
 		688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 688C3B241686CE2600D34755 /* WPTLangBase.m */; };
 		68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */; };
+		68B861DD1696E1BB00AFE078 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DC1696E1BB00AFE078 /* Icon.png */; };
+		68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DE1696E1BE00AFE078 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		688C3B231686CE2600D34755 /* WPTLangBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangBase.h; sourceTree = "<group>"; };
 		688C3B241686CE2600D34755 /* WPTLangBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangBase.m; sourceTree = "<group>"; };
 		68B861D616958C2900AFE078 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WPTNewSearchViewController.xib; sourceTree = "<group>"; };
+		68B861DC1696E1BB00AFE078 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		68B861DE1696E1BE00AFE078 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
+				68B861DE1696E1BE00AFE078 /* Icon@2x.png */,
+				68B861DC1696E1BB00AFE078 /* Icon.png */,
 				680CFD54168C5425007D0E42 /* WPTLang.h */,
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
@@ -212,6 +218,8 @@
 				6865448D166A599F0028DE77 /* TabBar.xib in Resources */,
 				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
 				68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */,
+				68B861DD1696E1BB00AFE078 /* Icon.png in Resources */,
+				68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
