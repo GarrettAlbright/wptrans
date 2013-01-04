@@ -17,7 +17,8 @@
     if (self) {
         NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/w/api.php?action=query&prop=langlinks&format=json&redirects=&lllimit=500&titles=%@", langcode, queryTerm, nil];
         NSURL *url = [NSURL URLWithString: [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+        [req setValue:@"WPTrans/1.0 (http://github.com/GarrettAlbright/wptrans; albright@abweb.us)" forHTTPHeaderField:@"User-Agent"];
         incomingData = [[NSMutableData alloc] init];
         connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
         receiver = delegateObject;
