@@ -11,6 +11,7 @@
 #import "WPTWPRequest.h"
 #import "WPTWPRequestDelegate.h"
 #import "WPTLangBase.h"
+#import "TSMiniWebBrowser.h"
 
 @interface WPTNewSearchViewController ()
 
@@ -192,7 +193,10 @@
     else if (buttonIndex == 1) {
         NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        [[UIApplication sharedApplication] openURL:url];
+        TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
+        [browser setMode:TSMiniWebBrowserModeModal];
+        [browser setShowReloadButton:NO];
+        [self presentModalViewController:browser animated:TRUE];
     }
 }
 
