@@ -1,0 +1,3 @@
+[submodule "TSMiniWebBrowser"]
+	path = TSMiniWebBrowser
+	url = git://github.com/tonisalae/TSMiniWebBrowser.git
