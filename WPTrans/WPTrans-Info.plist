@@ -14,15 +14,13 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-114.png</string>
-				<string>Icon-57.png</string>
 				<string>Icon.png</string>
 				<string>Icon@2x.png</string>
 			</array>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>us.ABWeb.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>us.ABWeb.III${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
