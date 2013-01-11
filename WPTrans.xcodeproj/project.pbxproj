@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		680CFD56168C5425007D0E42 /* WPTLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 680CFD55168C5425007D0E42 /* WPTLang.m */; };
-		68122166169FF682008DFC64 /* WPTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68122164169FF682008DFC64 /* WPTArticleViewController.m */; };
-		68122167169FF682008DFC64 /* WPTArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68122165169FF682008DFC64 /* WPTArticleViewController.xib */; };
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
 		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
 		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
@@ -35,9 +33,6 @@
 /* Begin PBXFileReference section */
 		680CFD54168C5425007D0E42 /* WPTLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLang.h; sourceTree = "<group>"; };
 		680CFD55168C5425007D0E42 /* WPTLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLang.m; sourceTree = "<group>"; };
-		68122163169FF682008DFC64 /* WPTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTArticleViewController.h; sourceTree = "<group>"; };
-		68122164169FF682008DFC64 /* WPTArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTArticleViewController.m; sourceTree = "<group>"; };
-		68122165169FF682008DFC64 /* WPTArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTArticleViewController.xib; sourceTree = "<group>"; };
 		6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSwitch.h; sourceTree = "<group>"; };
 		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
 		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
@@ -88,9 +83,6 @@
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
-				68122163169FF682008DFC64 /* WPTArticleViewController.h */,
-				68122164169FF682008DFC64 /* WPTArticleViewController.m */,
-				68122165169FF682008DFC64 /* WPTArticleViewController.xib */,
 				68B861DE1696E1BE00AFE078 /* Icon@2x.png */,
 				68B861DC1696E1BB00AFE078 /* Icon.png */,
 				680CFD54168C5425007D0E42 /* WPTLang.h */,
@@ -228,7 +220,6 @@
 				68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */,
 				68B861DD1696E1BB00AFE078 /* Icon.png in Resources */,
 				68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */,
-				68122167169FF682008DFC64 /* WPTArticleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +239,6 @@
 				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
 				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
 				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
-				68122166169FF682008DFC64 /* WPTArticleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
