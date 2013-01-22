@@ -77,8 +77,16 @@
     NSInteger index = [indexPath row];
     if (index == 0 && [results count] == 0) {
         // Show the "no results" message.
+        // ProTip: The "Zed Shaw" article in the English Wikipedia currently has
+        // no translations, so I like to use that for testing this message. I'm
+        // sure there are others, but that's what I use for now.
         NSString *noTransFound = NSLocalizedString(@"No translations found.", @"Error message shown when no translations for a search term were found.");
         [[cell detailTextLabel] setText:noTransFound];
+        // In the case of a search where there are translations found followed
+        // by a search where no translations are found, the first cell will have
+        // the previous first cell's textLabel text, apparently due to the whole
+        // cell reuse thing. So let's manually empty it out.
+        [[cell textLabel] setText:@""];
     }
     else {
         NSDictionary *result = [results objectAtIndex:[indexPath row]];
@@ -117,9 +125,8 @@
 
 - (void)startSearch
 {
-    // @todo Save search query as user data so that we can reload the search
-    // at next start-up of this app if it appears it was suspended before the
-    // search screen was closed.
+    // @todo Does it make sense to empty out the table of results now instead of
+    // waiting for the results from the server? Hmm.
     [activityIndicator startAnimating];
     NSString *currentSearchTerm = [searchTermBar text];
     NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[currentSearchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
