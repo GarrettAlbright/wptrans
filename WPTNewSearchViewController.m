@@ -121,8 +121,8 @@
     // at next start-up of this app if it appears it was suspended before the
     // search screen was closed.
     [activityIndicator startAnimating];
-    NSString *searchTerm = [searchTermBar text];
-    NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[searchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
+    NSString *currentSearchTerm = [searchTermBar text];
+    NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[currentSearchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
     [[NSUserDefaults standardUserDefaults] setObject:lastSearch forKey:@"lastSearch"];
     [[WPTWPRequest alloc] initWithQueryTerm:[searchTermBar text] langcode:langcode delegate:self];
 }
