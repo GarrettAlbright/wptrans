@@ -37,6 +37,7 @@
 -(void)nilOut {
     langs = nil;
     filteredLangs = nil;
+    moreLangInfo = nil;
 }
 
 -(NSString *)languageForCode:(NSString *)langcode
@@ -102,6 +103,30 @@
     // will rebuild the list.
     filteredLangs = nil;
     [[NSUserDefaults standardUserDefaults] setObject:[self enabledLangcodes] forKey:@"enabledLanguages"];
+}
+
+- (NSDictionary *)moreInfoForLang:(WPTLang *)lang {
+    if (!moreLangInfo) {
+        // We use moreLangInfo to store more information for a language; namely,
+        // for now, we mean only its English name, though that might change in
+        // the future. However, since in normal use, we really only need to
+        // store the language's langcode and native name, we allow this
+        // dictionary to stay at nil until the case that we actually have a use
+        // for additional information - in which case, this function is called
+        // and we revisit the plist to load and store the needed data.
+        // @todo We're re-using too much code from -allLangs here.
+        NSBundle *appBundle = [NSBundle mainBundle];
+        NSString *fname = [appBundle pathForResource:@"wikipedias" ofType:@"plist"];
+        NSArray *langsFromPlist = [[NSArray alloc] initWithContentsOfFile:fname];
+        NSMutableDictionary *mliMutable = [[NSMutableDictionary alloc] initWithCapacity:[langsFromPlist count]];
+        for (NSDictionary *lang in langsFromPlist) {
+            NSString *langcode = [lang objectForKey:@"prefix"];
+            NSDictionary *data = [[NSDictionary alloc] initWithObjects:@[[lang objectForKey:@"lang"]] forKeys:@[@"englishName"]];
+            [mliMutable setValue:data forKey:langcode];
+        }
+        moreLangInfo = (NSDictionary *)mliMutable;
+    }
+    return [moreLangInfo valueForKey:[lang langcode]];
 }
 
 @end

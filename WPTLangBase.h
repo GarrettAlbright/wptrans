@@ -14,6 +14,7 @@
     // @todo Should these be @syntehsized properties instead of these things?
     NSArray *langs;
     NSArray *filteredLangs;
+    NSDictionary *moreLangInfo;
 }
 
 + (WPTLangBase *)sharedBase;
@@ -22,6 +23,7 @@
 - (NSArray *)allLangs;
 - (NSArray *)enabledLangs;
 - (NSArray *)enabledLangcodes;
+- (NSDictionary *)moreInfoForLang:(WPTLang *)lang;
 - (void)enabledLangsWasUpdated;
 - (void)nilOut;
 
