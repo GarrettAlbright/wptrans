@@ -198,7 +198,7 @@
         [[UIPasteboard generalPasteboard] setString:[result objectForKey:@"translation"]];
     }
     else if (buttonIndex == 1) {
-        NSString *urlString = [NSString stringWithFormat:@"http://%@.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
         [browser setMode:TSMiniWebBrowserModeModal];

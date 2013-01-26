@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WPTLangEditViewController : UITableViewController
+@interface WPTLangEditViewController : UITableViewController <UIActionSheetDelegate>
 
 @end

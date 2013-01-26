@@ -10,6 +10,7 @@
 #import "WPTLangBase.h"
 #import "WPTLang.h"
 #import "WPTLangSwitch.h"
+#import "TSMiniWebBrowser.h"
 
 @interface WPTLangEditViewController ()
 
@@ -66,6 +67,41 @@
     [cell setAccessoryView:langSwitch];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WPTLangBase *langBase = [WPTLangBase sharedBase];
+    WPTLang *lang = [[langBase allLangs] objectAtIndex:[indexPath row]];
+    NSDictionary *moreLangInfo = [langBase moreInfoForLang:lang];
+    if (moreLangInfo) {
+        // Create the title of the action sheet. In theory, this should look
+        // like: "Native Language Name (English Language Name, Langcode)" (for
+        // example, "Español (Spanish, es)"). However, there are problems with
+        // RTL languages:
+        // http://stackoverflow.com/questions/14471781/rtl-scripts-in-ios-action-sheets-unexpected-behavior
+        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"%1$@ (%2$@, %3$@)", @"Format of the language information that shows at the top of the action sheet when the user selects a language on the language edit table. Strings are: Native language name, English language name, language code."), [lang language], [moreLangInfo objectForKey:@"englishName"], [lang langcode]];
+        NSString *viewText = NSLocalizedString(@"View Wikipedia", @"Button to view the front page of the Wikipedia for a given language.");
+        NSString *cancelText = NSLocalizedString(@"Cancel", nil);
+        [[[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelText destructiveButtonTitle:nil otherButtonTitles: viewText, nil] showInView:[self view]];
+    }
+
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        // "View Wikipedia" button
+        // @todo This copies too much from WPTNewSearchViewController.m
+        WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[[[self tableView] indexPathForSelectedRow] row]];
+        NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/", [lang langcode], nil];
+        NSLog(@"%@", urlString);
+        NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
+        [browser setMode:TSMiniWebBrowserModeModal];
+        [browser setShowReloadButton:NO];
+        [self presentModalViewController:browser animated:TRUE];
+    }
 }
 
 @end
