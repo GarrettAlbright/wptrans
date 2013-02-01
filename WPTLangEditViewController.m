@@ -18,19 +18,16 @@
 
 @implementation WPTLangEditViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        NSString *selectLangsText = NSLocalizedString(@"Select Languages", @"Title of language enable/disable screen.");
-        [[self navigationItem] setTitle:selectLangsText];
-    }
-    return self;
+- (void)viewWillAppear:(BOOL)animated {
+    NSString *selectLangsText = NSLocalizedString(@"Select Languages", @"Title of language enable/disable screen.");
+    [navBar setTitle:selectLangsText];
+    [doneButton setAction:@selector(closeSelf)];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)closeSelf
 {
     [[WPTLangBase sharedBase] enabledLangsWasUpdated];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -93,7 +90,7 @@
     if (buttonIndex == 0) {
         // "View Wikipedia" button
         // @todo This copies too much from WPTNewSearchViewController.m
-        WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[[[self tableView] indexPathForSelectedRow] row]];
+        WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[[langTable indexPathForSelectedRow] row]];
         NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/", [lang langcode], nil];
         NSLog(@"%@", urlString);
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -104,4 +101,10 @@
     }
 }
 
+- (void)viewDidUnload {
+    doneButton = nil;
+    langTable = nil;
+    navBar = nil;
+    [super viewDidUnload];
+}
 @end

@@ -98,7 +98,7 @@
 - (void)toEditScreen
 {
     WPTLangEditViewController *editViewController = [[WPTLangEditViewController alloc] init];
-    [[self navigationController] pushViewController:editViewController animated:YES];
+    [self presentModalViewController:editViewController animated:TRUE];
 }
 
 @end

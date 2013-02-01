@@ -33,6 +33,7 @@
 		686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 686544A8166B46BC0028DE77 /* WPTWPRequest.m */; };
 		688C3B221686C22D00D34755 /* wikipedias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688C3B211686C22D00D34755 /* wikipedias.plist */; };
 		688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 688C3B241686CE2600D34755 /* WPTLangBase.m */; };
+		689D6AF916B562D500E2C9A4 /* WPTLangEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */; };
 		68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */; };
 		68B861DD1696E1BB00AFE078 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DC1696E1BB00AFE078 /* Icon.png */; };
 		68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DE1696E1BE00AFE078 /* Icon@2x.png */; };
@@ -78,6 +79,7 @@
 		688C3B211686C22D00D34755 /* wikipedias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wikipedias.plist; sourceTree = "<group>"; };
 		688C3B231686CE2600D34755 /* WPTLangBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangBase.h; sourceTree = "<group>"; };
 		688C3B241686CE2600D34755 /* WPTLangBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangBase.m; sourceTree = "<group>"; };
+		689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTLangEditViewController.xib; sourceTree = "<group>"; };
 		68B861D616958C2900AFE078 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 		68B861DC1696E1BB00AFE078 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		68B861DE1696E1BE00AFE078 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				6842CBD01690096A00D248A9 /* WPTLangSwitch.m */,
 				6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */,
 				6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */,
+				689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */,
 				688C3B231686CE2600D34755 /* WPTLangBase.h */,
 				688C3B241686CE2600D34755 /* WPTLangBase.m */,
 				68654475166A585C0028DE77 /* WPTrans */,
@@ -270,6 +273,7 @@
 				681221E116A0079F008DFC64 /* reload_icon.png in Resources */,
 				681221E216A0079F008DFC64 /* reload_icon@2x.png in Resources */,
 				681221E416A0079F008DFC64 /* TSMiniWebBrowser.xib in Resources */,
+				689D6AF916B562D500E2C9A4 /* WPTLangEditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +330,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -340,6 +345,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -354,6 +360,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -362,6 +369,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
@@ -400,6 +408,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Garrett Albright";
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -409,6 +418,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE7082B8-6F00-4723-9BB1-829CB2E53339";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
 			};
 			name = "App Store";
 		};

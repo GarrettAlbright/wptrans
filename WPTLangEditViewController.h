@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WPTLangEditViewController : UITableViewController <UIActionSheetDelegate>
+@interface WPTLangEditViewController : UIViewController <UITableViewDelegate, UIActionSheetDelegate> {
+    
+    __weak IBOutlet UIBarButtonItem *doneButton;
+    __weak IBOutlet UITableView *langTable;
+    __weak IBOutlet UINavigationItem *navBar;
+}
 
 @end
