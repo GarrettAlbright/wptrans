@@ -82,7 +82,6 @@
     }
     WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[lang language]];
-    [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     return cell;
 }
 
