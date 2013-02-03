@@ -92,7 +92,6 @@
         // @todo This copies too much from WPTNewSearchViewController.m
         WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[[langTable indexPathForSelectedRow] row]];
         NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/", [lang langcode], nil];
-        NSLog(@"%@", urlString);
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
         [browser setMode:TSMiniWebBrowserModeModal];
