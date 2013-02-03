@@ -34,7 +34,8 @@
     return self;
 }
 
--(void)nilOut {
+-(void)nilOut
+{
     langs = nil;
     filteredLangs = nil;
     moreLangInfo = nil;
@@ -61,7 +62,8 @@
     return nil;
 }
 
--(NSArray *)allLangs {
+-(NSArray *)allLangs
+{
     if (!langs) {
         NSBundle *appBundle = [NSBundle mainBundle];
         NSString *fname = [appBundle pathForResource:@"wikipedias" ofType:@"plist"];
@@ -69,10 +71,19 @@
         NSArray *enabledLangs = [[NSUserDefaults standardUserDefaults] arrayForKey:@"enabledLanguages"];
         NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithCapacity:[langsFromPlist count]];
         for (NSDictionary *lang in langsFromPlist) {
-            NSString *langcode = [lang objectForKey:@"prefix"];
-            BOOL inDefault = [enabledLangs containsObject:langcode];
-            WPTLang *langObj = [[WPTLang alloc] initWithLanguage:[lang objectForKey:@"loclang"] langcode:langcode isEnabled:inDefault];
-            [filteredArray addObject:langObj];
+            // hasGlyphs is a bool which tracks whether iOS can render the
+            // characters in the writing system the language uses. We're
+            // excluding these languages from the list of "all languages" - not
+            // technically correct, but it stops the program from attempting to
+            // display languages which can only be rendered as "missing
+            // glyph" boxes by iOS anyway. Note that OS X *does* properly
+            // support some of those languages, but iOS still doesn't.
+            if ([[lang objectForKey:@"hasGlyphs"] boolValue]) {
+                NSString *langcode = [lang objectForKey:@"prefix"];
+                BOOL inDefault = [enabledLangs containsObject:langcode];
+                WPTLang *langObj = [[WPTLang alloc] initWithLanguage:[lang objectForKey:@"loclang"] langcode:langcode isEnabled:inDefault];
+                [filteredArray addObject:langObj];
+            }
         }
         // Sort the languages in "alphabetical" order
         NSSortDescriptor *byLang = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
@@ -81,7 +92,8 @@
     return langs;
 }
 
--(NSArray *)enabledLangs {
+-(NSArray *)enabledLangs
+{
     if (!filteredLangs) {
         NSPredicate *filter = [NSPredicate predicateWithFormat:@"isEnabled == YES"];
         filteredLangs = [[self allLangs] filteredArrayUsingPredicate:filter];
@@ -89,7 +101,8 @@
     return filteredLangs;
 }
 
--(NSArray *)enabledLangcodes {
+-(NSArray *)enabledLangcodes
+{
     NSArray *enabledLangs = [self enabledLangs];
     NSMutableArray *enabledLangcodes = [[NSMutableArray alloc] initWithCapacity:[enabledLangs count]];
     for (WPTLang *lang in enabledLangs) {
@@ -98,14 +111,16 @@
     return (NSArray *)enabledLangcodes;
 }
 
--(void)enabledLangsWasUpdated {
+-(void)enabledLangsWasUpdated
+{
     // Nil out filteredLangsAlphaOrder so that the next call to enabledLangs
     // will rebuild the list.
     filteredLangs = nil;
     [[NSUserDefaults standardUserDefaults] setObject:[self enabledLangcodes] forKey:@"enabledLanguages"];
 }
 
-- (NSDictionary *)moreInfoForLang:(WPTLang *)lang {
+- (NSDictionary *)moreInfoForLang:(WPTLang *)lang
+{
     if (!moreLangInfo) {
         // We use moreLangInfo to store more information for a language; namely,
         // for now, we mean only its English name, though that might change in
