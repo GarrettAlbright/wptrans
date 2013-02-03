@@ -404,6 +404,7 @@
 		6865448A166A585C0028DE77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
@@ -416,6 +417,7 @@
 		6865448B166A585C0028DE77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
@@ -453,6 +455,7 @@
 		68B861E11698767700AFE078 /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
