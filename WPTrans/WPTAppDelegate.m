@@ -49,7 +49,7 @@
                              @"it", // Italian
                              @"ur", // Urdu
                              nil];
-    NSDictionary *defaults = [NSDictionary dictionaryWithObject:defaultLangs forKey:@"enabledLanguages"];
+    NSDictionary *defaults = @{@"enabledLanguages": defaultLangs, @"bookmarks": @{}};
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 

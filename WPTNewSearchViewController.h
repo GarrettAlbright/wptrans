@@ -23,5 +23,6 @@
 
 - (id)initWithLang:(WPTLang *)lang searchTerm:(NSString *)searchTerm;
 - (void)startSearch;
+- (void)bookmarkCurrentTerm;
 
 @end

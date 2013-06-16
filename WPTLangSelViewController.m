@@ -10,6 +10,7 @@
 #import "WPTWPRequest.h"
 #import "WPTNewSearchViewController.h"
 #import "WPTLangEditViewController.h"
+#import "WPTBookmarksViewController.h"
 #import "WPTLangBase.h"
 #import "WPTLang.h"
 
@@ -30,6 +31,8 @@
         // "toEditScreen" below is correct. Why? I'm not sure.
         UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toEditScreen)];
         [ni setRightBarButtonItem:editButton];
+        UIBarButtonItem *bookmarksButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(toBookmarksScreen)];
+        [ni setLeftBarButtonItem:bookmarksButton];
     }
     return self;
 }
@@ -64,7 +67,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [[WPTLangBase sharedBase] enabledLangs] ? 1 : 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -97,7 +100,13 @@
 - (void)toEditScreen
 {
     WPTLangEditViewController *editViewController = [[WPTLangEditViewController alloc] init];
-    [self presentModalViewController:editViewController animated:TRUE];
+    [self presentModalViewController:editViewController animated:YES];
+}
+
+- (void)toBookmarksScreen
+{
+    WPTBookmarksViewController *bookmarksViewController = [[WPTBookmarksViewController alloc] init];
+    [[self navigationController] pushViewController:bookmarksViewController animated:YES];
 }
 
 @end

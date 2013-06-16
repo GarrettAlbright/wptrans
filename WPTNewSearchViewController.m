@@ -151,6 +151,10 @@
     }
     [resultsTable reloadData];
     [activityIndicator stopAnimating];
+    // @todo Don't re-add the bar button item if it's already added.
+    UINavigationItem *ni = [self navigationItem];
+    UIBarButtonItem *bookmarkButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(bookmarkCurrentTerm)];
+    [ni setRightBarButtonItem:bookmarkButton];
 }
 
 - (void)wikipediaQueryDidCauseError:(NSError *)error
@@ -180,6 +184,21 @@
     NSString *cancelText = NSLocalizedString(@"Cancel", @"Title of cancel button in Wikipedia server connection error window.");
     NSString *tryAgainText = NSLocalizedString(@"Try Again", @"Title of try again button in Wikipedia server connection error window.");
     [[[UIAlertView alloc] initWithTitle:errorTitleText message:errorMessage delegate:self cancelButtonTitle:cancelText otherButtonTitles:tryAgainText, nil] show];
+    [[self navigationItem] setRightBarButtonItem:nil];
+}
+
+- (void)bookmarkCurrentTerm
+{
+    NSMutableDictionary *bookmarks = [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"bookmarks"]];
+    NSMutableArray *currentTerms = [bookmarks objectForKey:langcode];
+    if (currentTerms == nil) {
+        [bookmarks setValue:@[searchTerm] forKey:langcode];
+    }
+    else {
+        [currentTerms addObject:searchTerm];
+        [bookmarks setValue:currentTerms forKey:langcode];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:bookmarks forKey:@"bookmarks"];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

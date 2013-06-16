@@ -13,5 +13,6 @@
 }
 
 - (void)toEditScreen;
+- (void)toBookmarksScreen;
 
 @end

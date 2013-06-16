@@ -21,6 +21,7 @@
 		681221E216A0079F008DFC64 /* reload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D916A0079F008DFC64 /* reload_icon@2x.png */; };
 		681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */; };
 		681221E416A0079F008DFC64 /* TSMiniWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */; };
+		681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */; };
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
 		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
 		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
@@ -61,6 +62,8 @@
 		681221DA16A0079F008DFC64 /* TSMiniWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMiniWebBrowser.h; sourceTree = "<group>"; };
 		681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMiniWebBrowser.m; sourceTree = "<group>"; };
 		681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSMiniWebBrowser.xib; sourceTree = "<group>"; };
+		681BF441176DBE6A0058FFC3 /* WPTBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTBookmarksViewController.h; sourceTree = "<group>"; };
+		681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTBookmarksViewController.m; sourceTree = "<group>"; };
 		6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSwitch.h; sourceTree = "<group>"; };
 		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
 		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
+				681BF441176DBE6A0058FFC3 /* WPTBookmarksViewController.h */,
+				681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */,
 				6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */,
 				686544A7166B46BC0028DE77 /* WPTWPRequest.h */,
 				686544A8166B46BC0028DE77 /* WPTWPRequest.m */,
@@ -322,6 +327,7 @@
 				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
 				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
 				681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */,
+				681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
