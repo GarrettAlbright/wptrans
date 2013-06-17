@@ -96,6 +96,17 @@
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (![results count]) {
+        // If there were no results, we don't want rows to be selectable (we're
+        // only showing the "No translations found" row anyway and don't want
+        // to try to show the menu for that).
+        return nil;
+    }
+    return indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *result = [results objectAtIndex:[indexPath row]];
