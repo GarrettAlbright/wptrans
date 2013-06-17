@@ -142,7 +142,8 @@
     NSString *currentSearchTerm = [searchTermBar text];
     NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[currentSearchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
     [[NSUserDefaults standardUserDefaults] setObject:lastSearch forKey:@"lastSearch"];
-    [[WPTWPRequest alloc] initWithQueryTerm:[searchTermBar text] langcode:langcode delegate:self];
+    [[WPTWPRequest alloc] initWithQueryTerm:currentSearchTerm langcode:langcode delegate:self];
+    searchTerm = currentSearchTerm;
 }
 
 - (void)wikipediaQueryResultsReceived:(NSDictionary *)fullResults
@@ -159,6 +160,7 @@
     NSString *finalTitle = [fullResults objectForKey:@"finalTitle"];
     if (finalTitle) {
         [searchTermBar setText:finalTitle];
+        searchTerm = finalTitle;
     }
     [resultsTable reloadData];
     [activityIndicator stopAnimating];
