@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WPTBookmarksViewController : UITableViewController
-@property  (nonatomic, readonly) NSDictionary *theBookmarks;
+@interface WPTBookmarksViewController : UITableViewController {
+    NSDictionary *theBookmarks;
+}
 
 @end

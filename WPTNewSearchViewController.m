@@ -11,6 +11,7 @@
 #import "WPTWPRequest.h"
 #import "WPTWPRequestDelegate.h"
 #import "WPTLangBase.h"
+#import "WPTBookmarksBase.h"
 #import "TSMiniWebBrowser.h"
 
 @interface WPTNewSearchViewController ()
@@ -202,16 +203,7 @@
 
 - (void)bookmarkCurrentTerm
 {
-    NSMutableDictionary *bookmarks = [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"bookmarks"]];
-    NSMutableArray *currentTerms = [bookmarks objectForKey:langcode];
-    if (currentTerms == nil) {
-        [bookmarks setValue:@[searchTerm] forKey:langcode];
-    }
-    else {
-        [currentTerms addObject:searchTerm];
-        [bookmarks setValue:currentTerms forKey:langcode];
-    }
-    [[NSUserDefaults standardUserDefaults] setObject:bookmarks forKey:@"bookmarks"];
+    [[WPTBookmarksBase sharedBase] addSearchTerm:searchTerm forLangcode:langcode];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -11,7 +11,7 @@
 
 @interface WPTLangBase : NSObject
 {
-    // @todo Should these be @syntehsized properties instead of these things?
+    // @todo Should these be @synthesized properties instead of these things?
     NSArray *langs;
     NSArray *filteredLangs;
     NSDictionary *moreLangInfo;

@@ -12,6 +12,7 @@
 
 #import "WPTBookmarksViewController.h"
 #import "WPTLangBase.h"
+#import "WPTBookmarksBase.h"
 #import "WPTLang.h"
 #import "WPTNewSearchViewController.h"
 
@@ -29,29 +30,22 @@
         UINavigationItem *ni = [self navigationItem];
         NSString *selectLangText = NSLocalizedString(@"Bookmarks", @"Title of bookmarks screen.");
         [ni setTitle:selectLangText];
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(startEdit)];
+        [ni setRightBarButtonItem:editButton];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSDictionary *unsortedBookmarks = [[NSUserDefaults standardUserDefaults] objectForKey:@"bookmarks"];
-    NSMutableDictionary *sortedBookmarks = [[NSMutableDictionary alloc] initWithCapacity:[unsortedBookmarks count]];
-    for (NSString *langcode in [[unsortedBookmarks allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]) {
-        NSArray *terms = [unsortedBookmarks objectForKey:langcode];
-        if ([terms count]) {
-            [sortedBookmarks setValue:[terms sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] forKey:langcode];
-        }
-    }
-    _theBookmarks = [NSDictionary dictionaryWithDictionary:sortedBookmarks];
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -64,13 +58,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [_theBookmarks count];
+    return [[[WPTBookmarksBase sharedBase] allBookmarks] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[_theBookmarks objectForKey:[[_theBookmarks allKeys] objectAtIndex:section]] count];
+    return [[WPTBookmarksBase sharedBase] numberOfTermsInLanguageAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,14 +74,13 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSString *term = [[_theBookmarks objectForKey:[[_theBookmarks allKeys] objectAtIndex:[indexPath section]]] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:term];
+    [[cell textLabel] setText:[[WPTBookmarksBase sharedBase] getTermForIndexPath:indexPath]];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSString *langcode = [[_theBookmarks allKeys] objectAtIndex:section];
+    NSString *langcode = [[WPTBookmarksBase sharedBase] langcodeForIndex:section];
     NSString *langName = [[WPTLangBase sharedBase] languageForCode:langcode];
     return langName ? langName : langcode;
 }
@@ -137,17 +130,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    NSString *langcode = [[_theBookmarks allKeys] objectAtIndex:[indexPath section]];
+    NSString *langcode = [[WPTBookmarksBase sharedBase] langcodeForIndex:[indexPath section]];
     WPTLang *theLang = [[WPTLangBase sharedBase] langObjectForCode:langcode];
-    NSString *term = [[_theBookmarks objectForKey:langcode] objectAtIndex:[indexPath row]];
+    NSString *term = [[WPTBookmarksBase sharedBase] getTermForIndexPath:indexPath];
     WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:theLang searchTerm:term];
     [[self navigationController] pushViewController:searchViewController animated:YES];
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 @end

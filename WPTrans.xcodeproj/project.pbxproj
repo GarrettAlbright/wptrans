@@ -22,6 +22,7 @@
 		681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */; };
 		681221E416A0079F008DFC64 /* TSMiniWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */; };
 		681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */; };
+		6842A54317707AEA0068FE27 /* WPTBookmarksBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */; };
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
 		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
 		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
@@ -64,6 +65,8 @@
 		681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSMiniWebBrowser.xib; sourceTree = "<group>"; };
 		681BF441176DBE6A0058FFC3 /* WPTBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTBookmarksViewController.h; sourceTree = "<group>"; };
 		681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTBookmarksViewController.m; sourceTree = "<group>"; };
+		6842A54117707AEA0068FE27 /* WPTBookmarksBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTBookmarksBase.h; sourceTree = "<group>"; };
+		6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTBookmarksBase.m; sourceTree = "<group>"; };
 		6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSwitch.h; sourceTree = "<group>"; };
 		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
 		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */,
 				688C3B231686CE2600D34755 /* WPTLangBase.h */,
 				688C3B241686CE2600D34755 /* WPTLangBase.m */,
+				6842A54117707AEA0068FE27 /* WPTBookmarksBase.h */,
+				6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */,
 				68654475166A585C0028DE77 /* WPTrans */,
 				6865446E166A585C0028DE77 /* Frameworks */,
 				6865446C166A585C0028DE77 /* Products */,
@@ -328,6 +333,7 @@
 				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
 				681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */,
 				681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */,
+				6842A54317707AEA0068FE27 /* WPTBookmarksBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
