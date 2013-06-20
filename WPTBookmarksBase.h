@@ -17,9 +17,10 @@
 - (NSDictionary *)allBookmarks;
 - (NSString *)langcodeForIndex:(NSUInteger)index;
 - (NSString *)getTermForIndexPath:(NSIndexPath *)indexPath;
-- (NSUInteger) numberOfTermsInLanguageAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfTermsInLanguageAtIndex:(NSUInteger)index;
 - (BOOL)addSearchTerm:(NSString *)term forLangcode:(NSString *)langcode;
 - (BOOL)deleteSearchTerm:(NSString *)term forLangcode:(NSString *)langcode;
+- (BOOL)deleteSearchTermAtIndexPath:(NSIndexPath *)indexPath;
 - (void)saveState;
 - (void)nilOut;
 

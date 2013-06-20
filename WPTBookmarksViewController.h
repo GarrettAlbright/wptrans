@@ -12,4 +12,7 @@
     NSDictionary *theBookmarks;
 }
 
+- (void)startEdit;
+- (void)stopEdit;
+
 @end

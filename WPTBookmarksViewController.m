@@ -85,6 +85,19 @@
     return langName ? langName : langcode;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if ([[WPTBookmarksBase sharedBase] deleteSearchTermAtIndexPath:indexPath]) {
+            if ([[self tableView] numberOfRowsInSection:[indexPath section]] == 1) {
+                [[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:[indexPath section]] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            else {
+                [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+        }
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -124,6 +137,22 @@
     return YES;
 }
 */
+
+- (void)startEdit
+{
+    [self setEditing:YES animated:YES];
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(stopEdit)];
+    [[self navigationItem] setRightBarButtonItem:editButton];
+    
+}
+
+- (void)stopEdit
+{
+    [self setEditing:NO animated:YES];
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(startEdit)];
+    [[self navigationItem] setRightBarButtonItem:editButton];
+
+}
 
 #pragma mark - Table view delegate
 

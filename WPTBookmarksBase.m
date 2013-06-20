@@ -90,7 +90,7 @@
 }
 
 - (BOOL)deleteSearchTerm:(NSString *)term forLangcode:(NSString *)langcode {
-    NSMutableArray *terms = [[self allBookmarks] objectForKey:langcode];
+    NSMutableArray *terms = [[[self allBookmarks] objectForKey:langcode] mutableCopy];
     if (terms == nil) {
         return NO;
     }
@@ -111,6 +111,23 @@
             }
             [self saveState];
             return YES;
+        }
+    }
+}
+
+- (BOOL)deleteSearchTermAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *langcode = [self langcodeForIndex:[indexPath section]];
+    if (langcode == nil) {
+        return NO;
+    }
+    else {
+        NSString *term = [self getTermForIndexPath:indexPath];
+        if (term == nil) {
+            return NO;
+        }
+        else {
+            return [self deleteSearchTerm:term forLangcode:langcode];
         }
     }
 }
