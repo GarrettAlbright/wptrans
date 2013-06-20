@@ -25,9 +25,5 @@ esoteric or new to appear in traditional dictionaries, like "fracking," and for
 people, group and corporate names, like "Michael Jackson," "Democratic Party of
 Japan" and "McDonald's," WPTrans can work well.
 
-The ultimate goal is to get WPTrans to a state where it could be in good
-conscience submitted to the App Store (as a free app), while developing my iOS
-skills along the way.
-
 About the Developer:
-Garrett Albright is an American living in Japan with his Chinese fiancée.
+Garrett Albright is an American living in Japan with his Chinese wife.

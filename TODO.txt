@@ -1,6 +1,5 @@
 In no particular order…
 
-- Language enable/disable screen should display as a modal.
 - No more compiler warnings. =[
 - Traditional Chinese support.
   - If you're not aware as to why this is problematic, the short story is that
@@ -14,5 +13,4 @@ In no particular order…
     it were possible, supporting both zh-hant and zh-hans would involve making
     two separate queries! Perhaps the solution here is to (gulp) implement zh-
     hant translation client-side.
-- Result bookmarking.
 - iPad form factor support.
