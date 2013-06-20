@@ -13,6 +13,7 @@
 #import "WPTLangBase.h"
 #import "WPTBookmarksBase.h"
 #import "TSMiniWebBrowser.h"
+#import "SVProgressHUD.h"
 
 @interface WPTNewSearchViewController ()
 
@@ -139,7 +140,7 @@
 {
     // @todo Does it make sense to empty out the table of results now instead of
     // waiting for the results from the server? Hmm.
-    [activityIndicator startAnimating];
+    [SVProgressHUD show];
     NSString *currentSearchTerm = [searchTermBar text];
     NSDictionary *lastSearch = [[NSDictionary alloc] initWithObjects:@[currentSearchTerm, langcode] forKeys:@[@"searchTerm", @"langcode"]];
     [[NSUserDefaults standardUserDefaults] setObject:lastSearch forKey:@"lastSearch"];
@@ -150,7 +151,7 @@
 - (void)wikipediaQueryResultsReceived:(NSDictionary *)fullResults
 {
     NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:@"language" ascending:YES];
-    NSMutableArray *filteredResults = [[NSMutableArray alloc] init];
+    NSMutableArray *filteredResults = [[NSMutableArray alloc] initWithCapacity:[fullResults count]];
     NSArray *enabledLangcodes = [[WPTLangBase sharedBase] enabledLangcodes];
     for (NSDictionary *result in [fullResults objectForKey:@"languageResults"]) {
         if ([enabledLangcodes containsObject:[result objectForKey:@"langcode"]]) {
@@ -163,8 +164,8 @@
         [searchTermBar setText:finalTitle];
         searchTerm = finalTitle;
     }
+    [SVProgressHUD dismiss];
     [resultsTable reloadData];
-    [activityIndicator stopAnimating];
     // @todo Don't re-add the bar button item if it's already added.
     UINavigationItem *ni = [self navigationItem];
     UIBarButtonItem *bookmarkButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(bookmarkCurrentTerm)];
@@ -173,7 +174,7 @@
 
 - (void)wikipediaQueryDidCauseError:(NSError *)error
 {
-    [activityIndicator stopAnimating];
+    [SVProgressHUD dismiss];
     // Set our own error strings for some cases; use the default for others
     // @todo Should probably be checking domain too, not just code…
     NSString *errorMessage;

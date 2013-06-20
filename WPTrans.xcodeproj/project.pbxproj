@@ -44,6 +44,9 @@
 		68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */; };
 		68B861DD1696E1BB00AFE078 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DC1696E1BB00AFE078 /* Icon.png */; };
 		68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DE1696E1BE00AFE078 /* Icon@2x.png */; };
+		68F28F051772DA5C00191A4F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68F28F021772DA5C00191A4F /* SVProgressHUD.bundle */; };
+		68F28F061772DA5C00191A4F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F28F041772DA5C00191A4F /* SVProgressHUD.m */; };
+		68F28F081772DAD600191A4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F28F071772DAD600191A4F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,10 @@
 		68B861D616958C2900AFE078 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 		68B861DC1696E1BB00AFE078 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		68B861DE1696E1BE00AFE078 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		68F28F021772DA5C00191A4F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		68F28F031772DA5C00191A4F /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		68F28F041772DA5C00191A4F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		68F28F071772DAD600191A4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F28F081772DAD600191A4F /* QuartzCore.framework in Frameworks */,
 				68654470166A585C0028DE77 /* UIKit.framework in Frameworks */,
 				68654472166A585C0028DE77 /* Foundation.framework in Frameworks */,
 				68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */,
@@ -157,8 +165,10 @@
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
+				68F28F071772DAD600191A4F /* QuartzCore.framework */,
 				680A00CF16BE252D005FE0ED /* Icons and launch images */,
 				681221D216A0079F008DFC64 /* TSMiniWebBrowser */,
+				68F28F011772DA5C00191A4F /* SVProgressHUD */,
 				680CFD54168C5425007D0E42 /* WPTLang.h */,
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
@@ -238,6 +248,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		68F28F011772DA5C00191A4F /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				68F28F021772DA5C00191A4F /* SVProgressHUD.bundle */,
+				68F28F031772DA5C00191A4F /* SVProgressHUD.h */,
+				68F28F041772DA5C00191A4F /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD/SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +333,7 @@
 				680A00CA16BE249D005FE0ED /* Default-568h@2x.png in Resources */,
 				680A00CC16BE251E005FE0ED /* Icon.png in Resources */,
 				680A00CE16BE2524005FE0ED /* Icon@2x.png in Resources */,
+				68F28F051772DA5C00191A4F /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +356,7 @@
 				681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */,
 				681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */,
 				6842A54317707AEA0068FE27 /* WPTBookmarksBase.m in Sources */,
+				68F28F061772DA5C00191A4F /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,3 +1,6 @@
 [submodule "TSMiniWebBrowser"]
 	path = TSMiniWebBrowser
 	url = git://github.com/tonisalae/TSMiniWebBrowser.git
+[submodule "SVProgressHUD"]
+	path = SVProgressHUD
+	url = git@github.com:samvermette/SVProgressHUD.git

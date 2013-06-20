@@ -16,6 +16,9 @@
     NSString *langcode;
     NSArray *results;
     
+    // Even though we don't actually use this activityIndicator anymore,
+    // removing the below causes the app to crash when it tries to display this
+    // view. WTF.
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITableView *resultsTable;
     IBOutlet UISearchBar *searchTermBar;
