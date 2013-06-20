@@ -168,7 +168,7 @@
     [resultsTable reloadData];
     // @todo Don't re-add the bar button item if it's already added.
     UINavigationItem *ni = [self navigationItem];
-    UIBarButtonItem *bookmarkButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(bookmarkCurrentTerm)];
+    UIBarButtonItem *bookmarkButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(bookmarkCurrentTerm)];
     [ni setRightBarButtonItem:bookmarkButton];
 }
 
@@ -204,7 +204,17 @@
 
 - (void)bookmarkCurrentTerm
 {
-    [[WPTBookmarksBase sharedBase] addSearchTerm:searchTerm forLangcode:langcode];
+    // The compiler seems to whine if we don't declare this string outside of
+    // the if structure first.
+    NSString *message;
+    if ([[WPTBookmarksBase sharedBase] addSearchTerm:searchTerm forLangcode:langcode]) {
+        message = NSLocalizedString(@"Search Bookmarked", @"Message displayed when the user saves a bookmark from the search results screen.");
+    
+    }
+    else {
+        message = NSLocalizedString(@"Search Already Bookmarked", @"Message displayed when the user attempts to bookmark a search which has already been bookmarked on the search results screen.");
+    }
+    [SVProgressHUD showSuccessWithStatus:message];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
