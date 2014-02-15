@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3858A14617DD8C3100EBB31C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3858A14517DD8C3100EBB31C /* Settings.bundle */; };
+		38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38773F0918ADE10300E5BD7F /* licenses.plist */; };
+		38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */; };
+		38773F1018ADEA2B00E5BD7F /* WPTLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0F18ADEA2B00E5BD7F /* WPTLicenseViewController.m */; };
 		680A00C616BE1597005FE0ED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C516BE1597005FE0ED /* Default.png */; };
 		680A00C816BE1D86005FE0ED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C716BE1D86005FE0ED /* Default@2x.png */; };
 		680A00CA16BE249D005FE0ED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C916BE249D005FE0ED /* Default-568h@2x.png */; };
@@ -50,6 +54,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3858A14517DD8C3100EBB31C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		38773F0918ADE10300E5BD7F /* licenses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = licenses.plist; sourceTree = "<group>"; };
+		38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLicenseListViewController.h; sourceTree = "<group>"; };
+		38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLicenseListViewController.m; sourceTree = "<group>"; };
+		38773F0E18ADEA2B00E5BD7F /* WPTLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLicenseViewController.h; sourceTree = "<group>"; };
+		38773F0F18ADEA2B00E5BD7F /* WPTLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLicenseViewController.m; sourceTree = "<group>"; };
 		680A00C516BE1597005FE0ED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		680A00C716BE1D86005FE0ED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		680A00C916BE249D005FE0ED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -186,6 +196,10 @@
 				6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */,
 				6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */,
 				689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */,
+				38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */,
+				38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */,
+				38773F0E18ADEA2B00E5BD7F /* WPTLicenseViewController.h */,
+				38773F0F18ADEA2B00E5BD7F /* WPTLicenseViewController.m */,
 				688C3B231686CE2600D34755 /* WPTLangBase.h */,
 				688C3B241686CE2600D34755 /* WPTLangBase.m */,
 				6842A54117707AEA0068FE27 /* WPTBookmarksBase.h */,
@@ -228,6 +242,7 @@
 		68654476166A585C0028DE77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3858A14517DD8C3100EBB31C /* Settings.bundle */,
 				68654477166A585C0028DE77 /* WPTrans-Info.plist */,
 				68654478166A585C0028DE77 /* InfoPlist.strings */,
 				6865447B166A585C0028DE77 /* main.m */,
@@ -244,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				688C3B211686C22D00D34755 /* wikipedias.plist */,
+				38773F0918ADE10300E5BD7F /* licenses.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -319,6 +335,7 @@
 				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
 				68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */,
 				68B861DD1696E1BB00AFE078 /* Icon.png in Resources */,
+				38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */,
 				68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */,
 				681221DD16A0079F008DFC64 /* back_icon.png in Resources */,
 				681221DE16A0079F008DFC64 /* back_icon@2x.png in Resources */,
@@ -334,6 +351,7 @@
 				680A00CC16BE251E005FE0ED /* Icon.png in Resources */,
 				680A00CE16BE2524005FE0ED /* Icon@2x.png in Resources */,
 				68F28F051772DA5C00191A4F /* SVProgressHUD.bundle in Resources */,
+				3858A14617DD8C3100EBB31C /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +366,10 @@
 				68654480166A585C0028DE77 /* WPTAppDelegate.m in Sources */,
 				686544A6166B439B0028DE77 /* WPTLangSelViewController.m in Sources */,
 				686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */,
+				38773F1018ADEA2B00E5BD7F /* WPTLicenseViewController.m in Sources */,
 				688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */,
 				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,
+				38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */,
 				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
 				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
 				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,

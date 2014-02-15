@@ -13,6 +13,7 @@
 #import "WPTBookmarksViewController.h"
 #import "WPTLangBase.h"
 #import "WPTLang.h"
+#import "WPTLicenseListViewController.h"
 
 @interface WPTLangSelViewController ()
 
@@ -67,13 +68,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[WPTLangBase sharedBase] enabledLangs] count];
+    return section == 0 ? [[[WPTLangBase sharedBase] enabledLangs] count] : 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,8 +84,13 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[lang language]];
+    if ([indexPath section] == 0) {
+        WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
+        [[cell textLabel] setText:[lang language]];
+    }
+    else {
+        [[cell textLabel] setText:@"License information"];
+    }
     return cell;
 }
 
@@ -92,9 +98,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
-    WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:nil];
-    [[self navigationController] pushViewController:searchViewController animated:YES];
+    if ([indexPath section] == 0) {
+        WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
+        WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:nil];
+        [[self navigationController] pushViewController:searchViewController animated:YES];
+    }
+    else {
+        WPTLicenseListViewController *licenseListViewController = [[WPTLicenseListViewController alloc] init];
+        [[self navigationController] pushViewController:licenseListViewController animated:YES];
+    }
 }
 
 - (void)toEditScreen

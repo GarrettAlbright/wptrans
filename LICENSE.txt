@@ -1,5 +1,7 @@
 WPTrans is licensed under the Simplified BSD License.
 
+NOTE TO WPTRANS FORKERS/REPACKAGERS: This license information must be included with any binaries created from the WPTrans source code in order to be in compliance with the license.
+
 Copyright (c) 2012-2013, Garrett Albright
 All rights reserved.
 
