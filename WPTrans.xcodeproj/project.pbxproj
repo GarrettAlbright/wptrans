@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3840425F18B04D8600FE6CB1 /* WPTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */; };
 		3858A14617DD8C3100EBB31C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3858A14517DD8C3100EBB31C /* Settings.bundle */; };
 		38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38773F0918ADE10300E5BD7F /* licenses.plist */; };
 		38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */; };
@@ -54,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3840425D18B04D8600FE6CB1 /* WPTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSearchViewController.h; sourceTree = "<group>"; };
+		3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSearchViewController.m; sourceTree = "<group>"; };
 		3858A14517DD8C3100EBB31C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		38773F0918ADE10300E5BD7F /* licenses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = licenses.plist; sourceTree = "<group>"; };
 		38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLicenseListViewController.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
 				6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */,
+				3840425D18B04D8600FE6CB1 /* WPTSearchViewController.h */,
+				3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */,
 				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
@@ -366,6 +371,7 @@
 				68654480166A585C0028DE77 /* WPTAppDelegate.m in Sources */,
 				686544A6166B439B0028DE77 /* WPTLangSelViewController.m in Sources */,
 				686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */,
+				3840425F18B04D8600FE6CB1 /* WPTSearchViewController.m in Sources */,
 				38773F1018ADEA2B00E5BD7F /* WPTLicenseViewController.m in Sources */,
 				688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */,
 				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,

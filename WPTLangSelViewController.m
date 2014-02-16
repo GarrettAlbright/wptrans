@@ -8,7 +8,8 @@
 
 #import "WPTLangSelViewController.h"
 #import "WPTWPRequest.h"
-#import "WPTNewSearchViewController.h"
+//#import "WPTNewSearchViewController.h"
+#import "WPTSearchViewController.h"
 #import "WPTLangEditViewController.h"
 #import "WPTBookmarksViewController.h"
 #import "WPTLangBase.h"
@@ -52,7 +53,7 @@
     if (lastSearch) {
         WPTLang *lang = [[WPTLangBase sharedBase] langObjectForCode:[lastSearch objectForKey:@"langcode"]];
         if (lang) {
-            WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:[lastSearch objectForKey:@"searchTerm"]];
+            WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang searchTerm:[lastSearch objectForKey:@"searchTerm"]];
             [[self navigationController] pushViewController:searchViewController animated:YES];
         }
     }
@@ -100,7 +101,7 @@
 {
     if ([indexPath section] == 0) {
         WPTLang *lang = [[[WPTLangBase sharedBase] enabledLangs] objectAtIndex:[indexPath row]];
-        WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:lang searchTerm:nil];
+        WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:lang searchTerm:nil];
         [[self navigationController] pushViewController:searchViewController animated:YES];
     }
     else {
