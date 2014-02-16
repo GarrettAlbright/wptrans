@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3840425F18B04D8600FE6CB1 /* WPTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */; };
+		3840426218B0808C00FE6CB1 /* WPTMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3840426118B0808C00FE6CB1 /* WPTMiniWebBrowser.m */; };
 		3858A14617DD8C3100EBB31C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3858A14517DD8C3100EBB31C /* Settings.bundle */; };
 		38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38773F0918ADE10300E5BD7F /* licenses.plist */; };
 		38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		3840425D18B04D8600FE6CB1 /* WPTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSearchViewController.h; sourceTree = "<group>"; };
 		3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSearchViewController.m; sourceTree = "<group>"; };
+		3840426018B0808C00FE6CB1 /* WPTMiniWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTMiniWebBrowser.h; sourceTree = SOURCE_ROOT; };
+		3840426118B0808C00FE6CB1 /* WPTMiniWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTMiniWebBrowser.m; sourceTree = SOURCE_ROOT; };
 		3858A14517DD8C3100EBB31C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		38773F0918ADE10300E5BD7F /* licenses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = licenses.plist; sourceTree = "<group>"; };
 		38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLicenseListViewController.h; sourceTree = "<group>"; };
@@ -186,9 +189,9 @@
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
 				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
 				6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */,
+				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				3840425D18B04D8600FE6CB1 /* WPTSearchViewController.h */,
 				3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */,
-				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
 				686544A5166B439B0028DE77 /* WPTLangSelViewController.m */,
 				681BF441176DBE6A0058FFC3 /* WPTBookmarksViewController.h */,
@@ -209,6 +212,8 @@
 				688C3B241686CE2600D34755 /* WPTLangBase.m */,
 				6842A54117707AEA0068FE27 /* WPTBookmarksBase.h */,
 				6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */,
+				3840426018B0808C00FE6CB1 /* WPTMiniWebBrowser.h */,
+				3840426118B0808C00FE6CB1 /* WPTMiniWebBrowser.m */,
 				68654475166A585C0028DE77 /* WPTrans */,
 				6865446E166A585C0028DE77 /* Frameworks */,
 				6865446C166A585C0028DE77 /* Products */,
@@ -309,6 +314,11 @@
 				CLASSPREFIX = WPT;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Garrett Albright";
+				TargetAttributes = {
+					6865446A166A585C0028DE77 = {
+						DevelopmentTeam = WD9882NK4D;
+					};
+				};
 			};
 			buildConfigurationList = 68654465166A585C0028DE77 /* Build configuration list for PBXProject "WPTrans" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -367,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3840426218B0808C00FE6CB1 /* WPTMiniWebBrowser.m in Sources */,
 				6865447C166A585C0028DE77 /* main.m in Sources */,
 				68654480166A585C0028DE77 /* WPTAppDelegate.m in Sources */,
 				686544A6166B439B0028DE77 /* WPTLangSelViewController.m in Sources */,
@@ -431,7 +442,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VERSIONING_SYSTEM = "";
@@ -454,7 +465,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -465,12 +476,15 @@
 		6865448A166A585C0028DE77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,12 +492,15 @@
 		6865448B166A585C0028DE77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -504,7 +521,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE7082B8-6F00-4723-9BB1-829CB2E53339";
 				SDKROOT = iphoneos;
@@ -516,12 +533,15 @@
 		68B861E11698767700AFE078 /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WPTrans/WPTrans-Prefix.pch";
 				INFOPLIST_FILE = "WPTrans/WPTrans-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};

@@ -11,7 +11,7 @@
 #import "WPTLangBase.h"
 #import "WPTBookmarksBase.h"
 #import "SVProgressHUD.h"
-#import "TSMiniWebBrowser.h"
+#import "WPTMiniWebBrowser.h"
 
 @interface WPTSearchViewController ()
 
@@ -247,10 +247,9 @@
         // "View Article" button
         NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
-        [browser setMode:TSMiniWebBrowserModeModal];
-        [browser setShowReloadButton:NO];
-        [self presentModalViewController:browser animated:TRUE];
+        WPTMiniWebBrowser *browser = [[WPTMiniWebBrowser alloc] initWithUrl:url];
+        UINavigationController *browserNavController = [[UINavigationController alloc] initWithRootViewController:browser];
+        [self presentModalViewController:browserNavController animated:TRUE];
     }
     [[self tableView] deselectRowAtIndexPath:[[self tableView] indexPathForSelectedRow] animated: YES];
 }
