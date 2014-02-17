@@ -22,6 +22,7 @@
         incomingData = [[NSMutableData alloc] init];
         connection = [[NSURLConnection alloc] initWithRequest:req delegate:self];
         receiver = delegateObject;
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     }
     return self;
 }
@@ -37,10 +38,12 @@
 }
 
 -(void)handleError:(NSError *)error {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [receiver wikipediaQueryDidCauseError:error];
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)conn {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     NSError *jsonError;
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:incomingData options:0 error:&jsonError];
     if (jsonResult == nil) {
