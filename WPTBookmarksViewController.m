@@ -14,7 +14,8 @@
 #import "WPTLangBase.h"
 #import "WPTBookmarksBase.h"
 #import "WPTLang.h"
-#import "WPTNewSearchViewController.h"
+//#import "WPTNewSearchViewController.h"
+#import "WPTSearchViewController.h"
 
 @interface WPTBookmarksViewController ()
 
@@ -168,7 +169,7 @@
     NSString *langcode = [[WPTBookmarksBase sharedBase] langcodeForIndex:[indexPath section]];
     WPTLang *theLang = [[WPTLangBase sharedBase] langObjectForCode:langcode];
     NSString *term = [[WPTBookmarksBase sharedBase] getTermForIndexPath:indexPath];
-    WPTNewSearchViewController *searchViewController = [[WPTNewSearchViewController alloc] initWithLang:theLang searchTerm:term];
+    WPTSearchViewController *searchViewController = [[WPTSearchViewController alloc] initWithLang:theLang searchTerm:term];
     [[self navigationController] pushViewController:searchViewController animated:YES];
 }
 
