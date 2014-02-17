@@ -125,7 +125,8 @@
     NSString *cancelText = NSLocalizedString(@"Cancel", @"Allows user to cancel out of menu shown when search result is selected.");
     NSString *copyText = NSLocalizedString(@"Copy", @"Allows user to copy search result to clipboard.");
     NSString *viewArticleText = NSLocalizedString(@"View Article", @"Launches search result's corresponding Wikipedia article in the browser.");
-    [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:cancelText destructiveButtonTitle:nil otherButtonTitles:copyText, viewArticleText, nil] showInView:[self view]];
+    NSString *searchTitleText = [NSString stringWithFormat:NSLocalizedString(@"Search “%@”", @"Launches new search for article title in target language"), [result objectForKey:@"translation"]];
+    [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:cancelText destructiveButtonTitle:nil otherButtonTitles:copyText, viewArticleText, searchTitleText, nil] showInView:[self view]];
 }
 
 - (void)startSearch
@@ -238,20 +239,34 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSDictionary *result = [results objectAtIndex:[[[self tableView] indexPathForSelectedRow] row]];
-    if (buttonIndex == 0) {
-        // "Copy" button
-        [[UIPasteboard generalPasteboard] setString:[result objectForKey:@"translation"]];
-    }
-    else if (buttonIndex == 1) {
-        // "View Article" button
-        NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
-        NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        WPTMiniWebBrowser *browser = [[WPTMiniWebBrowser alloc] initWithUrl:url];
-        UINavigationController *browserNavController = [[UINavigationController alloc] initWithRootViewController:browser];
-        [self presentModalViewController:browserNavController animated:TRUE];
+    switch (buttonIndex - 0) {
+        // Xcode can't seem to handle it if I don't put the case parts in curly
+        // braces here for some reason.
+        // @see http://stackoverflow.com/questions/2036819/compile-error-with-switch-expected-expression-before
+        case 0:
+        {
+            // "Copy" button
+            [[UIPasteboard generalPasteboard] setString:[result objectForKey:@"translation"]];
+            break;
+        }
+        case 1:
+        {
+            // "View article" button
+            NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/%@", [result objectForKey:@"langcode"], [result objectForKey:@"translation"], nil];
+            NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            WPTMiniWebBrowser *browser = [[WPTMiniWebBrowser alloc] initWithUrl:url];
+            UINavigationController *browserNavController = [[UINavigationController alloc] initWithRootViewController:browser];
+            [self presentModalViewController:browserNavController animated:TRUE];
+            break;
+        }
+        case 2:
+        {
+            WPTLang *lang = [[WPTLangBase sharedBase] langObjectForCode:[result objectForKey:@"langcode"]];
+            WPTSearchViewController *newSearchController = [[WPTSearchViewController alloc] initWithLang:lang searchTerm:[result objectForKey:@"translation"]];
+            [[self navigationController] pushViewController:newSearchController animated:YES];
+        }
     }
     [[self tableView] deselectRowAtIndexPath:[[self tableView] indexPathForSelectedRow] animated: YES];
 }
-
 
 @end
