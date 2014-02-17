@@ -22,6 +22,7 @@
         [[self navigationItem] setRightBarButtonItem:doneButton];
         UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButton)];
         [[self navigationItem] setLeftBarButtonItem:actionButton];
+        [[self navigationItem] setTitle:NSLocalizedString(@"Loading…", @"Initial title of in-app browser")];
         
         webView = [[UIWebView alloc] initWithFrame:bounds];
         [webView setDelegate:self];

@@ -10,7 +10,8 @@
 #import "WPTLangBase.h"
 #import "WPTLang.h"
 #import "WPTLangSwitch.h"
-#import "TSMiniWebBrowser.h"
+//#import "TSMiniWebBrowser.h"
+#import "WPTMiniWebBrowser.h"
 
 @interface WPTLangEditViewController ()
 
@@ -93,10 +94,9 @@
         WPTLang *lang = [[[WPTLangBase sharedBase] allLangs] objectAtIndex:[[langTable indexPathForSelectedRow] row]];
         NSString *urlString = [NSString stringWithFormat:@"http://%@.m.wikipedia.org/wiki/", [lang langcode], nil];
         NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        TSMiniWebBrowser *browser = [[TSMiniWebBrowser alloc] initWithUrl:url];
-        [browser setMode:TSMiniWebBrowserModeModal];
-        [browser setShowReloadButton:NO];
-        [self presentModalViewController:browser animated:TRUE];
+        WPTMiniWebBrowser *browser = [[WPTMiniWebBrowser alloc] initWithUrl:url];
+        UINavigationController *browserNavController = [[UINavigationController alloc] initWithRootViewController:browser];
+        [self presentModalViewController:browserNavController animated:TRUE];
     }
 }
 
