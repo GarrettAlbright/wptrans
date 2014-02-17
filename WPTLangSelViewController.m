@@ -90,9 +90,25 @@
         [[cell textLabel] setText:[lang language]];
     }
     else {
-        [[cell textLabel] setText:@"License information"];
+        [[cell textLabel] setText:NSLocalizedString(@"License information", @"License information row")];
     }
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+//        case 0:
+//            return NSLocalizedString(@"Languages to search in", @"Section header of language list on language select screen");
+//            break;
+        
+        case 1:
+            return NSLocalizedString(@"Information", @"Section header of information section on language select screen");
+            break;
+            
+        default:
+            return nil;
+            break;
+    }
 }
 
 #pragma mark - Table view delegate

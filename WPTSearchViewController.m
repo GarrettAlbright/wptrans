@@ -128,7 +128,6 @@
     [[[UIActionSheet alloc] initWithTitle:[result objectForKey:@"translation"] delegate:self cancelButtonTitle:cancelText destructiveButtonTitle:nil otherButtonTitles:copyText, viewArticleText, nil] showInView:[self view]];
 }
 
-
 - (void)startSearch
 {
     // @todo Does it make sense to empty out the table of results now instead of
