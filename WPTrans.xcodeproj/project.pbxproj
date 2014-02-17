@@ -13,6 +13,7 @@
 		38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38773F0918ADE10300E5BD7F /* licenses.plist */; };
 		38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */; };
 		38773F1018ADEA2B00E5BD7F /* WPTLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38773F0F18ADEA2B00E5BD7F /* WPTLicenseViewController.m */; };
+		3883F7AE18B2BE020007C803 /* WPTNewLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883F7AD18B2BE020007C803 /* WPTNewLangEditViewController.m */; };
 		680A00C616BE1597005FE0ED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C516BE1597005FE0ED /* Default.png */; };
 		680A00C816BE1D86005FE0ED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C716BE1D86005FE0ED /* Default@2x.png */; };
 		680A00CA16BE249D005FE0ED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00C916BE249D005FE0ED /* Default-568h@2x.png */; };
@@ -66,6 +67,8 @@
 		38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLicenseListViewController.m; sourceTree = "<group>"; };
 		38773F0E18ADEA2B00E5BD7F /* WPTLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLicenseViewController.h; sourceTree = "<group>"; };
 		38773F0F18ADEA2B00E5BD7F /* WPTLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLicenseViewController.m; sourceTree = "<group>"; };
+		3883F7AC18B2BE020007C803 /* WPTNewLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTNewLangEditViewController.h; sourceTree = "<group>"; };
+		3883F7AD18B2BE020007C803 /* WPTNewLangEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTNewLangEditViewController.m; sourceTree = "<group>"; };
 		680A00C516BE1597005FE0ED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		680A00C716BE1D86005FE0ED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		680A00C916BE249D005FE0ED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */,
 				6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */,
 				689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */,
+				3883F7AC18B2BE020007C803 /* WPTNewLangEditViewController.h */,
+				3883F7AD18B2BE020007C803 /* WPTNewLangEditViewController.m */,
 				38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */,
 				38773F0C18ADE34700E5BD7F /* WPTLicenseListViewController.m */,
 				38773F0E18ADEA2B00E5BD7F /* WPTLicenseViewController.h */,
@@ -388,6 +393,7 @@
 				680CFD56168C5425007D0E42 /* WPTLang.m in Sources */,
 				38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */,
 				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
+				3883F7AE18B2BE020007C803 /* WPTNewLangEditViewController.m in Sources */,
 				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
 				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
 				681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */,

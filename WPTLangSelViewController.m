@@ -10,7 +10,8 @@
 #import "WPTWPRequest.h"
 //#import "WPTNewSearchViewController.h"
 #import "WPTSearchViewController.h"
-#import "WPTLangEditViewController.h"
+//#import "WPTLangEditViewController.h"
+#import "WPTNewLangEditViewController.h"
 #import "WPTBookmarksViewController.h"
 #import "WPTLangBase.h"
 #import "WPTLang.h"
@@ -129,8 +130,9 @@
 
 - (void)toEditScreen
 {
-    WPTLangEditViewController *editViewController = [[WPTLangEditViewController alloc] init];
-    [self presentModalViewController:editViewController animated:YES];
+    WPTNewLangEditViewController *editViewController = [[WPTNewLangEditViewController alloc] init];
+    UINavigationController *editNavController = [[UINavigationController alloc] initWithRootViewController:editViewController];
+    [self presentModalViewController:editNavController animated:YES];
 }
 
 - (void)toBookmarksScreen
