@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Garrett Albright. All rights reserved.
 //
 
-#import "TSMiniWebBrowser.h"
-
 @interface WPTMiniWebBrowser : UIViewController <UIWebViewDelegate, UIActionSheetDelegate> {
     UIWebView *webView;
 }

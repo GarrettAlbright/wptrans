@@ -21,19 +21,9 @@
 		680A00CC16BE251E005FE0ED /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00CB16BE251E005FE0ED /* Icon.png */; };
 		680A00CE16BE2524005FE0ED /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 680A00CD16BE2524005FE0ED /* Icon@2x.png */; };
 		680CFD56168C5425007D0E42 /* WPTLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 680CFD55168C5425007D0E42 /* WPTLang.m */; };
-		681221DD16A0079F008DFC64 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D416A0079F008DFC64 /* back_icon.png */; };
-		681221DE16A0079F008DFC64 /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D516A0079F008DFC64 /* back_icon@2x.png */; };
-		681221DF16A0079F008DFC64 /* forward_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D616A0079F008DFC64 /* forward_icon.png */; };
-		681221E016A0079F008DFC64 /* forward_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D716A0079F008DFC64 /* forward_icon@2x.png */; };
-		681221E116A0079F008DFC64 /* reload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D816A0079F008DFC64 /* reload_icon.png */; };
-		681221E216A0079F008DFC64 /* reload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 681221D916A0079F008DFC64 /* reload_icon@2x.png */; };
-		681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */; };
-		681221E416A0079F008DFC64 /* TSMiniWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */; };
 		681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */; };
 		6842A54317707AEA0068FE27 /* WPTBookmarksBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */; };
 		6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD01690096A00D248A9 /* WPTLangSwitch.m */; };
-		6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */; };
-		6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */; };
 		68654470166A585C0028DE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6865446F166A585C0028DE77 /* UIKit.framework */; };
 		68654472166A585C0028DE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654471166A585C0028DE77 /* Foundation.framework */; };
 		68654474166A585C0028DE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68654473166A585C0028DE77 /* CoreGraphics.framework */; };
@@ -48,8 +38,6 @@
 		686544A9166B46BC0028DE77 /* WPTWPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 686544A8166B46BC0028DE77 /* WPTWPRequest.m */; };
 		688C3B221686C22D00D34755 /* wikipedias.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688C3B211686C22D00D34755 /* wikipedias.plist */; };
 		688C3B251686CE2600D34755 /* WPTLangBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 688C3B241686CE2600D34755 /* WPTLangBase.m */; };
-		689D6AF916B562D500E2C9A4 /* WPTLangEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */; };
-		68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */; };
 		68B861DD1696E1BB00AFE078 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DC1696E1BB00AFE078 /* Icon.png */; };
 		68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68B861DE1696E1BE00AFE078 /* Icon@2x.png */; };
 		68F28F051772DA5C00191A4F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68F28F021772DA5C00191A4F /* SVProgressHUD.bundle */; };
@@ -78,25 +66,12 @@
 		680A00CD16BE2524005FE0ED /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		680CFD54168C5425007D0E42 /* WPTLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLang.h; sourceTree = "<group>"; };
 		680CFD55168C5425007D0E42 /* WPTLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLang.m; sourceTree = "<group>"; };
-		681221D416A0079F008DFC64 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
-		681221D516A0079F008DFC64 /* back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@2x.png"; sourceTree = "<group>"; };
-		681221D616A0079F008DFC64 /* forward_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_icon.png; sourceTree = "<group>"; };
-		681221D716A0079F008DFC64 /* forward_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward_icon@2x.png"; sourceTree = "<group>"; };
-		681221D816A0079F008DFC64 /* reload_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload_icon.png; sourceTree = "<group>"; };
-		681221D916A0079F008DFC64 /* reload_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload_icon@2x.png"; sourceTree = "<group>"; };
-		681221DA16A0079F008DFC64 /* TSMiniWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMiniWebBrowser.h; sourceTree = "<group>"; };
-		681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMiniWebBrowser.m; sourceTree = "<group>"; };
-		681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSMiniWebBrowser.xib; sourceTree = "<group>"; };
 		681BF441176DBE6A0058FFC3 /* WPTBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTBookmarksViewController.h; sourceTree = "<group>"; };
 		681BF442176DBE6A0058FFC3 /* WPTBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTBookmarksViewController.m; sourceTree = "<group>"; };
 		6842A54117707AEA0068FE27 /* WPTBookmarksBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTBookmarksBase.h; sourceTree = "<group>"; };
 		6842A54217707AEA0068FE27 /* WPTBookmarksBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTBookmarksBase.m; sourceTree = "<group>"; };
 		6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangSwitch.h; sourceTree = "<group>"; };
 		6842CBD01690096A00D248A9 /* WPTLangSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangSwitch.m; sourceTree = "<group>"; };
-		6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangEditViewController.h; sourceTree = "<group>"; };
-		6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangEditViewController.m; sourceTree = "<group>"; };
-		6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTNewSearchViewController.h; sourceTree = "<group>"; };
-		6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTNewSearchViewController.m; sourceTree = "<group>"; };
 		6842CBDC1691718100D248A9 /* WPTWPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTWPRequestDelegate.h; sourceTree = "<group>"; };
 		6865446B166A585C0028DE77 /* WPTrans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTrans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865446F166A585C0028DE77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -119,8 +94,6 @@
 		688C3B211686C22D00D34755 /* wikipedias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wikipedias.plist; sourceTree = "<group>"; };
 		688C3B231686CE2600D34755 /* WPTLangBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTLangBase.h; sourceTree = "<group>"; };
 		688C3B241686CE2600D34755 /* WPTLangBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTLangBase.m; sourceTree = "<group>"; };
-		689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPTLangEditViewController.xib; sourceTree = "<group>"; };
-		68B861D616958C2900AFE078 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WPTNewSearchViewController.xib; sourceTree = "<group>"; };
 		68B861DC1696E1BB00AFE078 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		68B861DE1696E1BE00AFE078 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		68F28F021772DA5C00191A4F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -158,43 +131,14 @@
 			name = "Icons and launch images";
 			sourceTree = "<group>";
 		};
-		681221D216A0079F008DFC64 /* TSMiniWebBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				681221D316A0079F008DFC64 /* images */,
-				681221DA16A0079F008DFC64 /* TSMiniWebBrowser.h */,
-				681221DB16A0079F008DFC64 /* TSMiniWebBrowser.m */,
-				681221DC16A0079F008DFC64 /* TSMiniWebBrowser.xib */,
-			);
-			name = TSMiniWebBrowser;
-			path = TSMiniWebBrowser/TSMiniWebBrowser;
-			sourceTree = "<group>";
-		};
-		681221D316A0079F008DFC64 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				681221D416A0079F008DFC64 /* back_icon.png */,
-				681221D516A0079F008DFC64 /* back_icon@2x.png */,
-				681221D616A0079F008DFC64 /* forward_icon.png */,
-				681221D716A0079F008DFC64 /* forward_icon@2x.png */,
-				681221D816A0079F008DFC64 /* reload_icon.png */,
-				681221D916A0079F008DFC64 /* reload_icon@2x.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		68654460166A585C0028DE77 = {
 			isa = PBXGroup;
 			children = (
 				68F28F071772DAD600191A4F /* QuartzCore.framework */,
 				680A00CF16BE252D005FE0ED /* Icons and launch images */,
-				681221D216A0079F008DFC64 /* TSMiniWebBrowser */,
 				68F28F011772DA5C00191A4F /* SVProgressHUD */,
 				680CFD54168C5425007D0E42 /* WPTLang.h */,
 				680CFD55168C5425007D0E42 /* WPTLang.m */,
-				6842CBD61690475600D248A9 /* WPTNewSearchViewController.h */,
-				6842CBD71690475700D248A9 /* WPTNewSearchViewController.m */,
-				68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */,
 				3840425D18B04D8600FE6CB1 /* WPTSearchViewController.h */,
 				3840425E18B04D8600FE6CB1 /* WPTSearchViewController.m */,
 				686544A4166B439B0028DE77 /* WPTLangSelViewController.h */,
@@ -206,9 +150,6 @@
 				686544A8166B46BC0028DE77 /* WPTWPRequest.m */,
 				6842CBCF1690096A00D248A9 /* WPTLangSwitch.h */,
 				6842CBD01690096A00D248A9 /* WPTLangSwitch.m */,
-				6842CBD316900D9A00D248A9 /* WPTLangEditViewController.h */,
-				6842CBD416900D9A00D248A9 /* WPTLangEditViewController.m */,
-				689D6AF816B562D500E2C9A4 /* WPTLangEditViewController.xib */,
 				3883F7AC18B2BE020007C803 /* WPTNewLangEditViewController.h */,
 				3883F7AD18B2BE020007C803 /* WPTNewLangEditViewController.m */,
 				38773F0B18ADE34700E5BD7F /* WPTLicenseListViewController.h */,
@@ -357,18 +298,9 @@
 				68654486166A585C0028DE77 /* Default-568h@2x.png in Resources */,
 				6865448D166A599F0028DE77 /* TabBar.xib in Resources */,
 				688C3B221686C22D00D34755 /* wikipedias.plist in Resources */,
-				68B861D516958C2900AFE078 /* WPTNewSearchViewController.xib in Resources */,
 				68B861DD1696E1BB00AFE078 /* Icon.png in Resources */,
 				38773F0A18ADE10300E5BD7F /* licenses.plist in Resources */,
 				68B861DF1696E1BE00AFE078 /* Icon@2x.png in Resources */,
-				681221DD16A0079F008DFC64 /* back_icon.png in Resources */,
-				681221DE16A0079F008DFC64 /* back_icon@2x.png in Resources */,
-				681221DF16A0079F008DFC64 /* forward_icon.png in Resources */,
-				681221E016A0079F008DFC64 /* forward_icon@2x.png in Resources */,
-				681221E116A0079F008DFC64 /* reload_icon.png in Resources */,
-				681221E216A0079F008DFC64 /* reload_icon@2x.png in Resources */,
-				681221E416A0079F008DFC64 /* TSMiniWebBrowser.xib in Resources */,
-				689D6AF916B562D500E2C9A4 /* WPTLangEditViewController.xib in Resources */,
 				680A00C616BE1597005FE0ED /* Default.png in Resources */,
 				680A00C816BE1D86005FE0ED /* Default@2x.png in Resources */,
 				680A00CA16BE249D005FE0ED /* Default-568h@2x.png in Resources */,
@@ -398,9 +330,6 @@
 				38773F0D18ADE34700E5BD7F /* WPTLicenseListViewController.m in Sources */,
 				6842CBD11690096A00D248A9 /* WPTLangSwitch.m in Sources */,
 				3883F7AE18B2BE020007C803 /* WPTNewLangEditViewController.m in Sources */,
-				6842CBD516900D9A00D248A9 /* WPTLangEditViewController.m in Sources */,
-				6842CBD91690475700D248A9 /* WPTNewSearchViewController.m in Sources */,
-				681221E316A0079F008DFC64 /* TSMiniWebBrowser.m in Sources */,
 				681BF443176DBE6A0058FFC3 /* WPTBookmarksViewController.m in Sources */,
 				6842A54317707AEA0068FE27 /* WPTBookmarksBase.m in Sources */,
 				68F28F061772DA5C00191A4F /* SVProgressHUD.m in Sources */,
@@ -416,14 +345,6 @@
 				68654479166A585C0028DE77 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		68B861D716958C2900AFE078 /* WPTNewSearchViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68B861D616958C2900AFE078 /* en */,
-			);
-			name = WPTNewSearchViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
