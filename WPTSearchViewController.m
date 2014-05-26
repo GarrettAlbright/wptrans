@@ -35,10 +35,9 @@
     return self;
 }
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super viewDidAppear:animated];
     if (searchTerm) {
         [searchTermBar setText:searchTerm];
         [self startSearch];
